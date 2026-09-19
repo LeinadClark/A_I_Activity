@@ -3,7 +3,6 @@ pydantic>=2.0.0
 
 # Templating & Document Export
 jinja2>=3.1.0
-python-docx>=1.0.0
 Pillow>=9.0.0
 
 # HTTP & REST Communications

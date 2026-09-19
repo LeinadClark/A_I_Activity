@@ -241,7 +241,7 @@ class OBESyllabusDesktopApp(tk.Tk):
 
         lbl_devs = tk.Label(
             title_container,
-            text="Developers: Leinad Clark M. Dela Cruz & Nicole Anne G. Liwag | Instructor: Prof. Rob Malitao",
+            text="Developer: Leinad Clark M. Dela Cruz | Instructor: Prof. Rob Malitao",
             font=("Segoe UI", 8),
             bg=COLOR_MAROON,
             fg="#FEF08A"

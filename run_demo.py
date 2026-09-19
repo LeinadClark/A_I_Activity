@@ -176,7 +176,7 @@ def select_model(interactive: bool = True) -> str:
 def run_full_demo(interactive: bool = False):
     print_banner("UPHSD Molino Campus - College of Computer Studies - AI-Powered OBE Syllabus Generator")
     print("Institutional Quality Assurance Pipeline")
-    print("Developers: Leinad Clark M. Dela Cruz & Nicole Anne G. Liwag | Instructor: Prof. Rob Malitao")
+    print("Developer: Leinad Clark M. Dela Cruz | Instructor: Prof. Rob Malitao")
     print("Stack: Python 3.10+, Local Ollama (Qwen 2.5 on GPU), Pydantic, SQLite, Jinja2\n")
 
     # -------------------------------------------------------------------------

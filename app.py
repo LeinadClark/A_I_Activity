@@ -111,7 +111,7 @@ if os.path.exists(logo_path):
 
 st.sidebar.markdown("### **UPHSD Molino Campus**\n#### College of Computer Studies")
 st.sidebar.caption("AI-Powered OBE Syllabus Generator Microservice")
-st.sidebar.markdown("**Developers:** Leinad Clark M. Dela Cruz & Nicole Anne G. Liwag  \n**Instructor:** Prof. Rob Malitao")
+st.sidebar.markdown("**Developer:** Leinad Clark M. Dela Cruz  \n**Instructor:** Prof. Rob Malitao")
 st.sidebar.divider()
 
 st.sidebar.subheader("⚙️ AI Engine Settings")

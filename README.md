@@ -3,9 +3,7 @@
 **College of Computer Studies (CCS) • Bacoor City, Cavite**  
 **Course:** Artificial Intelligence – Lab (Lesson 5: Midterm Mini-Project)  
 **Instructor:** Prof. Rob Malitao  
-**Developers / Researchers:** 
-- **Leinad Clark M. Dela Cruz**
-- **Nicole Anne G. Liwag**  
+**Developer / Researcher:** **Leinad Clark M. Dela Cruz**  
 **Tech Stack:** Python 3.10+, Local Ollama (Qwen 2.5), Pydantic, SQLite3, Jinja2, Tkinter, Streamlit  
 
 ---
@@ -78,9 +76,8 @@ When Qwen returns invalid output or malformed syntax:
 
 The project provides three convenient ways to run and demonstrate the system:
 
-### 1. 🖥️ Native Python Desktop GUI App (Recommended for Local Desktop)
-Run directly as a native Windows desktop GUI application with zero browser or web server dependencies:
-- Double-click **`launch_desktop_gui.bat`** (located in the root or `A.I Activity` folder), or run:
+### 1. 🖥️ Native Python Desktop GUI App (Recommended for Desktop)
+Run directly as a native desktop GUI application with zero browser or web server dependencies:
 ```powershell
 python desktop_gui.py
 ```
@@ -117,7 +114,6 @@ python desktop_gui.py
 
 ### 2. ⚡ Dynamic Interactive Command-Line Demo Runner
 Demonstrates the full end-to-end automated pipeline with interactive prompts:
-- Double-click **`run_demo.bat`**, or run:
 ```powershell
 python run_demo.py --interactive --open
 ```
@@ -129,7 +125,6 @@ python run_demo.py --interactive --open
 
 ### 3. 🌐 Interactive Streamlit Web Dashboard
 Launch the web interface styled with Perpetualite Maroon & Gold:
-- Double-click **`launch_gui.bat`**, or run:
 ```powershell
 streamlit run app.py
 ```
@@ -138,7 +133,6 @@ streamlit run app.py
 
 ### 4. 🧪 Automated Verification Test Suite
 Executes all 6 rigorous system unit tests:
-- Double-click **`run_tests.bat`**, or run:
 ```powershell
 python test_system.py
 ```
@@ -152,7 +146,7 @@ Use this structured script and timeline when recording your screen demonstration
 
 | Timestamp | Phase | Screen Action | Voiceover / Talking Points |
 | :--- | :--- | :--- | :--- |
-| **0:00 – 0:45** | **Introduction & Architecture** | Show terminal and project directory structure (`obe_schemas.py`, `llm_engine.py`, `schema.sql`, `templates/`). | *"Good day, Prof. Malitao and evaluators. Today we are presenting our AI-Powered OBE Syllabus Generator for the College of Computer Studies. We designed an end-to-end pipeline that takes raw course parameters, queries Qwen 2.5 via Ollama in JSON mode, strictly validates the output with Pydantic, persists the data into a normalized SQLite database with cascading deletes, allows human-in-the-loop faculty edits, and compiles the final syllabus into the official CCS layout."* |
+| **0:00 – 0:45** | **Introduction & Architecture** | Show terminal and project directory structure (`obe_schemas.py`, `llm_engine.py`, `schema.sql`, `templates/`). | *"Good day, Prof. Malitao and evaluators. Today I am presenting my AI-Powered OBE Syllabus Generator for the College of Computer Studies. I designed an end-to-end pipeline that takes raw course parameters, queries Qwen 2.5 via Ollama in JSON mode, strictly validates the output with Pydantic, persists the data into a normalized SQLite database with cascading deletes, allows human-in-the-loop faculty edits, and compiles the final syllabus into the official CCS layout."* |
 | **0:45 – 1:45** | **AI Generation & Schema Enforcement** | Run `python run_demo.py --interactive` or click **"Generate & Validate Syllabus"** in Streamlit Tab 1. | *"Here in Step 1, we pass the raw course parameters for BSIT 3112: Computer Graphics and Programming. In Step 2, the LLM engine queries Ollama. Notice how Pydantic enforces deterministic boundaries: non-measurable verbs like 'understand' or 'know' are strictly prohibited, weekly LLOs are categorized into Knowledge, Skills, and Attitude, and Weeks 6, 12, and 18 are locked to Prelim, Midterm, and Final exams."* |
 | **1:45 – 2:45** | **SQLite Ingestion & Faculty Edit (CRUD)** | Show SQLite terminal or Streamlit Tab 2 & 3. Display the record before and after editing. | *"In Step 3, the validated JSON is ingested into our 3NF normalized SQLite database `obe_syllabus.db`. All foreign keys have `ON DELETE CASCADE` enabled. In Step 4, we demonstrate our Human-in-the-Loop faculty interface. Academic accreditation requires faculty oversight. Here we select CLO #2, revise the description to include mathematical projection matrices, and change the Bloom level to 'Evaluating'. The database updates cleanly."* |
 | **2:45 – 3:45** | **Jinja2 Export & Institutional Document** | Show the exported file `exports/BSIT_3112_Syllabus.html` in Chrome or Edge. Scroll through sections. | *"In Step 5, `export_engine.py` queries SQLite by course code and injects the records into `uphsd_ccs_template.html`. As you can see, the rendered HTML accurately matches the institutional CCS layout: the official UPHSD logo, Institutional PVM, Eight Perpetualite Core Values, Course Learning Outcomes, the 18-week learning plan with K/S/A badges, Base-0 grading system, and signature blocks."* |
