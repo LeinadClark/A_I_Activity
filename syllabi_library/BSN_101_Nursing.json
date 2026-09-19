@@ -1,0 +1,551 @@
+{
+  "course_code": "BSN 101",
+  "course_title": "Fundamentals of Nursing Practice",
+  "course_description": "Professional nursing concepts, aseptic techniques, vital signs, medication administration, health assessment, wound care, and compassionate patient care.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "None",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Apply nursing process and aseptic clinical techniques in patient assessment and health promotion.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze human vital signs, physiological data, and diagnostic lab values to formulate nursing care plans.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Applying",
+      "co_description": "Administer pharmacological treatments and demonstrate safe medication dosages under hospital protocols.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate patient outcomes, ethical dilemmas, and infection control compliance in clinical ward settings.",
+      "mapped_po": [
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Formulate holistic, patient-centered nursing care plans integrating Perpetualite compassion and healthcare ethics.",
+      "mapped_po": [
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Orientation to Professional Nursing, Bioethics, and Health Care Systems",
+      "teaching_learning_activity": "Clinical Orientation & Interactive Lecture",
+      "assessment_task": "Core Competencies Assessment",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain the scope of professional nursing practice and bioethics"
+        },
+        {
+          "category": "S",
+          "description": "Demonstrate clinical handwashing and basic aseptic technique"
+        },
+        {
+          "category": "A",
+          "description": "Embody the Perpetualite core value of compassionate service"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Vital Signs Assessment: Body Temperature, Pulse, and Respiration",
+      "teaching_learning_activity": "Vital Signs Demonstration and Return Demonstration",
+      "assessment_task": "Vital Signs Clinical Rubric",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "State normal physiological parameters across age cohorts"
+        },
+        {
+          "category": "S",
+          "description": "Measure and record pulse rates and respiratory patterns accurately"
+        },
+        {
+          "category": "A",
+          "description": "Value patient comfort and dignity during physical assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Blood Pressure Measurement and Hemodynamic Monitoring",
+      "teaching_learning_activity": "Sphygmomanometer Practical Lab Session",
+      "assessment_task": "Blood Pressure Return Demo",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain Korotkoff sounds and factors influencing vascular pressure"
+        },
+        {
+          "category": "S",
+          "description": "Execute accurate blood pressure measurement techniques"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate meticulous accuracy in recording clinical data"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Health Assessment: Head-to-Toe Physical Examination Techniques",
+      "teaching_learning_activity": "Simulation Ward Inspection & Palpation Lab",
+      "assessment_task": "Physical Assessment Checklist",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe inspection, palpation, percussion, and auscultation procedures"
+        },
+        {
+          "category": "S",
+          "description": "Perform systematic physical assessment across body systems"
+        },
+        {
+          "category": "A",
+          "description": "Respect patient privacy and cultural sensitivities"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Infection Control, Universal Precautions, and PPE Protocols",
+      "teaching_learning_activity": "Sterile Field Setup & PPE Donning/Doffing Lab",
+      "assessment_task": "Infection Control Checklist",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain chains of infection transmission and sterile barrier principles"
+        },
+        {
+          "category": "S",
+          "description": "Don and doff sterile gloves, masks, and protective gowns"
+        },
+        {
+          "category": "A",
+          "description": "Display diligence in preventing nosocomial pathogen transmission"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Fundamental Nursing Theories & Clinical Skills Return Demo",
+      "teaching_learning_activity": "Formal Examination & Clinical Simulation",
+      "assessment_task": "Prelim Written Exam & Clinical OSCE",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall anatomical landmarks and basic nursing intervention principles"
+        },
+        {
+          "category": "S",
+          "description": "Execute timed basic clinical skill return demonstrations"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit professional composure and ethical demeanor under evaluation"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Nursing Process: Assessment, Nursing Diagnosis, and Care Planning",
+      "teaching_learning_activity": "Case Study Analysis Workshop",
+      "assessment_task": "Care Plan Draft Evaluation",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        2,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify NANDA nursing diagnosis taxonomies and etiology statements"
+        },
+        {
+          "category": "S",
+          "description": "Formulate measurable short-term and long-term patient goals"
+        },
+        {
+          "category": "A",
+          "description": "Commit to individualized, compassionate patient care"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Medication Administration Foundations: The 10 Rights and Dosage Calculations",
+      "teaching_learning_activity": "Pharmacological Calculation Workshop",
+      "assessment_task": "Drug Calculation Problem Set",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain pharmacokinetics, drug classifications, and safety checks"
+        },
+        {
+          "category": "S",
+          "description": "Calculate metric dosages and intravenous drip rates without error"
+        },
+        {
+          "category": "A",
+          "description": "Uphold zero-tolerance for pharmacological administration errors"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Enteral and Topical Medication Delivery: Oral, Sublingual, and Transdermal",
+      "teaching_learning_activity": "Skills Lab Medication Pass Simulation",
+      "assessment_task": "Medication Pass Performance Task",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe administration routes and absorption barriers"
+        },
+        {
+          "category": "S",
+          "description": "Administer oral medications following 10-rights safety protocols"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate empathy when addressing patient medication anxieties"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Parenteral Medication Delivery: Intramuscular, Subcutaneous, and Intradermal",
+      "teaching_learning_activity": "Injection Simulation Lab",
+      "assessment_task": "Injection Technique Rubric",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        3,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify correct injection sites, needle gauges, and penetration angles"
+        },
+        {
+          "category": "S",
+          "description": "Perform sterile intramuscular and subcutaneous injections"
+        },
+        {
+          "category": "A",
+          "description": "Provide reassuring patient communication during needle procedures"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Wound Care, Surgical Asepsis, and Sterile Dressing Changes",
+      "teaching_learning_activity": "Wound Debridement & Dressing Change Lab",
+      "assessment_task": "Sterile Dressing Change Rubric",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate wound healing phases and exudate classifications"
+        },
+        {
+          "category": "S",
+          "description": "Execute sterile dressing change and wound cleansing procedures"
+        },
+        {
+          "category": "A",
+          "description": "Show meticulous patience in preserving sterile fields"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Clinical OSCE on Medication Administration and Wound Management",
+      "teaching_learning_activity": "Formal Clinical OSCE Exam Session",
+      "assessment_task": "Midterm Clinical OSCE Rubric",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        2,
+        3,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize pharmacological safety rules and wound healing dynamics"
+        },
+        {
+          "category": "S",
+          "description": "Demonstrate flawless parenteral administration under inspection"
+        },
+        {
+          "category": "A",
+          "description": "Display professional accountability and nurse-patient rapport"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Intravenous (IV) Therapy: Cannulation, Fluid Maintenance, and Infiltration Monitoring",
+      "teaching_learning_activity": "IV Cannulation Simulation Workshop",
+      "assessment_task": "IV Insertion Skill Checklist",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        3,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain fluid and electrolyte balances and IV solution categories"
+        },
+        {
+          "category": "S",
+          "description": "Insert and secure intravenous cannulas under sterile conditions"
+        },
+        {
+          "category": "A",
+          "description": "Maintain constant vigilance for phlebitis and infiltration signs"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Oxygenation, Airway Management, and Tracheostomy Care",
+      "teaching_learning_activity": "Airway Suctioning and Nebulization Practical Lab",
+      "assessment_task": "Airway Management Assessment",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        2,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe pulse oximetry, respiratory mechanics, and hypoxia signs"
+        },
+        {
+          "category": "S",
+          "description": "Perform tracheostomy care and sterile endotracheal suctioning"
+        },
+        {
+          "category": "A",
+          "description": "Respond with calm urgency to acute respiratory distress indicators"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "Pain Management, Patient Comfort Measures, and Palliative Nursing",
+      "teaching_learning_activity": "Pain Assessment Scale and Comfort Measure Workshop",
+      "assessment_task": "Pain Management Case Study",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Assess acute versus chronic pain using standardized clinical scales"
+        },
+        {
+          "category": "S",
+          "description": "Implement non-pharmacological comfort and repositioning interventions"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate deep empathy for patients enduring severe discomfort"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Perioperative Nursing: Pre-operative Preparation and Post-Anesthesia Recovery",
+      "teaching_learning_activity": "Operating Room Protocols & Recovery Room Lab",
+      "assessment_task": "Perioperative Checklist Task",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Outline surgical consent verification and recovery complications"
+        },
+        {
+          "category": "S",
+          "description": "Monitor post-operative vital signs and surgical wound drains"
+        },
+        {
+          "category": "A",
+          "description": "Prioritize patient safety during post-anesthetic transitions"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Comprehensive Clinical Nursing Integration and Interdisciplinary Ward Rounds",
+      "teaching_learning_activity": "Hospital Ward Simulation & Case Defense",
+      "assessment_task": "Integrative Nursing Portfolio",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize multi-system health alterations into prioritized actions"
+        },
+        {
+          "category": "S",
+          "description": "Collaborate with medical teams in simulated ward handovers (SBAR)"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate leadership and collaborative teamwork in nursing care"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Clinical Defense: Comprehensive Patient Care Evaluation",
+      "teaching_learning_activity": "Formal Capstone Defense & Exit Clinical Exam",
+      "assessment_task": "Final Comprehensive Evaluation",
+      "result_evidence": "Clinical Portfolio / Return Demo Rubric",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize all theoretical nursing sciences and clinical proficiencies"
+        },
+        {
+          "category": "S",
+          "description": "Defend comprehensive evidence-based nursing care management plan"
+        },
+        {
+          "category": "A",
+          "description": "Exemplify Perpetualite 'Helpers of God' professional virtue"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Clinical Skills Laboratory & Return Demonstrations",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Pharmacological Calculations",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination (Theory & OSCE)",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination (Theory & OSCE)",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Clinical Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

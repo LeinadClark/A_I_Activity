@@ -1,0 +1,540 @@
+{
+  "course_code": "CS 323",
+  "course_title": "Information Assurance and Cybersecurity",
+  "course_description": "Fundamental principles of digital information assurance, applied cryptography (AES, RSA, SHA-256), network reconnaissance, packet analysis, web application security (OWASP), firewalls, intrusion detection systems (Snort), and incident response.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "IT 212, CS 211",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Apply cryptographic algorithms including symmetric encryption, asymmetric ciphers, and hash functions.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze network attack vectors, packet payloads, and port scans using Wireshark and Nmap.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate system vulnerabilities, attack surfaces, and risk exposure using industry security frameworks.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Applying",
+      "co_description": "Configure intrusion detection systems (IDS) and firewall access control lists (ACLs) to block cyber threats.",
+      "mapped_po": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Design an organizational cybersecurity defense architecture integrating zero-trust principles and incident response.",
+      "mapped_po": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Cybersecurity Foundations: CIA Triad, Threat Actors, and Defense-in-Depth",
+      "teaching_learning_activity": "Interactive Lecture and Security Tooling Setup",
+      "assessment_task": "Security Lab Environment Setup",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define Confidentiality, Integrity, Availability, and non-repudiation"
+        },
+        {
+          "category": "S",
+          "description": "Configure isolated virtualized security labs (Kali Linux / Wireshark)"
+        },
+        {
+          "category": "A",
+          "description": "Acknowledge legal frameworks, ethics, and computer misuse laws"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Classical Cryptography: Caesar, Vigenère, and Transposition Ciphers",
+      "teaching_learning_activity": "Cipher Cracking Hands-on Lab",
+      "assessment_task": "Frequency Analysis Report",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain substitution principles, cipher keys, and frequency distributions"
+        },
+        {
+          "category": "S",
+          "description": "Perform frequency analysis to crack monoalphabetic substitution ciphers"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate historical cryptanalysis evolution"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Symmetric Cryptography: DES, AES, Block Cipher Modes (CBC vs GCM)",
+      "teaching_learning_activity": "AES Implementation Workshop",
+      "assessment_task": "AES File Encryption Script",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast symmetric block ciphers with stream ciphers"
+        },
+        {
+          "category": "S",
+          "description": "Encrypt and decrypt confidential files using Python cryptography and AES-GCM"
+        },
+        {
+          "category": "A",
+          "description": "Value cryptographic strength and proper initialization vectors"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Asymmetric Cryptography: RSA, Diffie-Hellman Key Exchange, and ECC",
+      "teaching_learning_activity": "RSA Key Generation Lab Session",
+      "assessment_task": "Public-Private Key Exchange Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain prime factorization, trapdoor functions, and public/private keys"
+        },
+        {
+          "category": "S",
+          "description": "Generate RSA keypairs and exchange encrypted messages securely"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate meticulous care in safeguarding private keys"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Cryptographic Hashes and Message Integrity: SHA-256 and HMAC",
+      "teaching_learning_activity": "Hash Verification Lab Session",
+      "assessment_task": "File Integrity Checker Tool",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe avalanche effects, collision resistance, and preimage resistance"
+        },
+        {
+          "category": "S",
+          "description": "Implement file integrity monitoring tools using SHA-256 and HMAC"
+        },
+        {
+          "category": "A",
+          "description": "Uphold zero tolerance for unauthorized digital tampering"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Applied Cryptography and Math Foundations Exam",
+      "teaching_learning_activity": "Formal Prelim Written & Practical Exam",
+      "assessment_task": "Prelim Exam Rubric & Score",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall cryptographic formulas, modular arithmetic, and cipher modes"
+        },
+        {
+          "category": "S",
+          "description": "Execute timed file encryption and key generation coding problems"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit professionalism and academic honesty under timed assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Digital Signatures, Public Key Infrastructure (PKI), and X.509 Certificates",
+      "teaching_learning_activity": "Digital Certificate Authority Lab",
+      "assessment_task": "Signed Certificate Workflow",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain digital signatures, Certificate Authorities (CAs), and CRLs"
+        },
+        {
+          "category": "S",
+          "description": "Generate self-signed SSL/TLS certificates and verify digital signatures"
+        },
+        {
+          "category": "A",
+          "description": "Value trust hierarchies and authentication infrastructures"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Network Reconnaissance: OSINT, Footprinting, and DNS Enumeration",
+      "teaching_learning_activity": "Passive Reconnaissance Workshop",
+      "assessment_task": "Footprinting Intelligence Brief",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate passive reconnaissance from active network scanning"
+        },
+        {
+          "category": "S",
+          "description": "Execute open-source intelligence gathering and WHOIS/DNS analysis"
+        },
+        {
+          "category": "A",
+          "description": "Emphasize ethical boundaries during security reconnaissance"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Active Scanning: Port Scanning with Nmap and Banner Grabbing",
+      "teaching_learning_activity": "Nmap Port Scanning Lab Session",
+      "assessment_task": "Network Attack Surface Report",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain TCP three-way handshakes, SYN stealth scans, and UDP scanning"
+        },
+        {
+          "category": "S",
+          "description": "Perform comprehensive Nmap scans to detect open ports and OS versions"
+        },
+        {
+          "category": "A",
+          "description": "Display discipline in scanning only authorized sandbox targets"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Packet Analysis: Sniffing Protocols, ARP Poisoning, and Wireshark",
+      "teaching_learning_activity": "Packet Capture Analysis Lab",
+      "assessment_task": "Network Sniffing Incident Report",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify plaintext credential leaks in HTTP, FTP, and Telnet traffic"
+        },
+        {
+          "category": "S",
+          "description": "Capture and analyze malicious packet payloads using Wireshark filters"
+        },
+        {
+          "category": "A",
+          "description": "Respect privacy rights and adhere strictly to ethical sniffing mandates"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Web Application Attacks: SQL Injection and Cross-Site Scripting (XSS)",
+      "teaching_learning_activity": "OWASP Vulnerability Lab Session",
+      "assessment_task": "Vulnerability Exploitation Log",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze reflected XSS scripts and SQL authentication bypass payloads"
+        },
+        {
+          "category": "S",
+          "description": "Identify vulnerable web parameters and remediate code vulnerabilities"
+        },
+        {
+          "category": "A",
+          "description": "Commit to defense-first security engineering"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Network Scanning and Vulnerability Audit Exam",
+      "teaching_learning_activity": "Formal Midterm Exam Session",
+      "assessment_task": "Midterm Practical Defense",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize reconnaissance data, packet capture analysis, and web attacks"
+        },
+        {
+          "category": "S",
+          "description": "Identify and audit network vulnerabilities under timed inspection"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate technical competence under formal assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Authentication Protocols: Multi-Factor Authentication (MFA) and Biometrics",
+      "teaching_learning_activity": "MFA Implementation Workshop",
+      "assessment_task": "TOTP Authenticator Integration",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast knowledge, ownership, and inherence authentication factors"
+        },
+        {
+          "category": "S",
+          "description": "Integrate Time-based One-Time Password (TOTP) protocols in Python"
+        },
+        {
+          "category": "A",
+          "description": "Value multi-layered defenses in identity verification"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Endpoint Security: Malware Classification (Viruses, Trojans, Ransomware)",
+      "teaching_learning_activity": "Malware Analysis Sandbox Lab",
+      "assessment_task": "Malware Behavioral Profile",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe static versus dynamic malware behavioral analysis techniques"
+        },
+        {
+          "category": "S",
+          "description": "Analyze executable file hashes and inspect sandbox system calls safely"
+        },
+        {
+          "category": "A",
+          "description": "Maintain strict containment when inspecting suspicious artifacts"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "Firewalls, Access Control Lists (ACL), and Network Segmentation",
+      "teaching_learning_activity": "Firewall Configuration Workshop",
+      "assessment_task": "Firewall Rule Hardening Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate packet filtering, stateful inspection, and next-gen firewalls"
+        },
+        {
+          "category": "S",
+          "description": "Configure Linux iptables / UFW firewall rules blocking unauthorized ports"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate defense-in-depth principles through segmentation"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Intrusion Detection Systems (IDS): Snort and Suricata Rule Engineering",
+      "teaching_learning_activity": "Snort IDS Rule Deployment Lab",
+      "assessment_task": "IDS Alert Analysis Log",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain signature-based versus anomaly-based intrusion detection"
+        },
+        {
+          "category": "S",
+          "description": "Write Snort detection rules alerting on malicious ICMP and port scans"
+        },
+        {
+          "category": "A",
+          "description": "Strive for high true-positive detection without alert fatigue"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Incident Response, Computer Forensics, and Disaster Recovery Planning",
+      "teaching_learning_activity": "Cyber Incident Response Simulation",
+      "assessment_task": "Incident Response Playbook",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Outline the 6 phases of incident response (NIST SP 800-61)"
+        },
+        {
+          "category": "S",
+          "description": "Acquire volatile RAM artifacts and preserve forensic chain of custody"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate calm leadership during simulated security breaches"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Cybersecurity Defense Architecture",
+      "teaching_learning_activity": "Formal Capstone Project Defense",
+      "assessment_task": "Final Evaluation Score & Rubric",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize applied cryptography, network defense, IDS, and incident response"
+        },
+        {
+          "category": "S",
+          "description": "Defend an enterprise zero-trust security architecture before a panel"
+        },
+        {
+          "category": "A",
+          "description": "Exemplify Perpetualite leadership and professional presentation ethics"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Hands-on Security & Penetration Labs",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Cryptographic Problem Sets",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Security Defense Showcase",
+      "percentage_weight": 15.0
+    }
+  ]
+}

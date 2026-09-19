@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.course_code }} - {{ course.course_title }} | UPHSD CCS Syllabus</title>
+    <style>
+        :root {
+            --uphsd-maroon: #800000;
+            --uphsd-dark-maroon: #5a0000;
+            --uphsd-gold: #FFD700;
+            --uphsd-light-gold: #FFF9E6;
+            --text-main: #2b2b2b;
+            --text-muted: #555555;
+            --border-color: #c4c4c4;
+            --table-header-bg: #800000;
+            --table-row-alt: #fcfcfc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-main);
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .document-container {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        /* Institutional Header */
+        .inst-header-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .inst-banner-box {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .inst-banner-img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            padding-bottom: 0;
+        }
+
+        .doc-syllabus-title {
+            color: var(--uphsd-maroon);
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            margin: 10px 0 0 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .inst-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 3px double var(--uphsd-maroon);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .inst-logo {
+            max-height: 90px;
+            width: auto;
+        }
+
+        .inst-header-text h1 {
+            color: var(--uphsd-maroon);
+            font-size: 20px;
+            margin: 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .inst-header-text h2 {
+            color: #333333;
+            font-size: 15px;
+            margin: 4px 0;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .inst-header-text p {
+            color: var(--text-muted);
+            margin: 2px 0;
+            font-size: 12px;
+        }
+
+        .inst-header-text .doc-title {
+            color: var(--uphsd-maroon);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Section Headings */
+        h2.section-banner {
+            background-color: var(--uphsd-maroon);
+            color: #ffffff;
+            padding: 8px 14px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 6px solid var(--uphsd-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3.sub-banner {
+            color: var(--uphsd-maroon);
+            border-bottom: 2px solid var(--uphsd-gold);
+            padding-bottom: 4px;
+            font-size: 13px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* Content Blocks */
+        .pvm-block {
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
+
+        .pvm-block strong {
+            color: var(--uphsd-maroon);
+        }
+
+        /* Course Info Grid */
+        .course-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            background-color: var(--uphsd-light-gold);
+            border: 1px solid #e6d396;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .course-info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-info-item.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .course-info-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--uphsd-maroon);
+            text-transform: uppercase;
+        }
+
+        .course-info-val {
+            font-size: 13px;
+            font-weight: 600;
+            color: #222222;
+        }
+
+        /* Tables */
+        table.obe-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        table.obe-table th, 
+        table.obe-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px 10px;
+            vertical-align: top;
+        }
+
+        table.obe-table th {
+            background-color: var(--uphsd-maroon);
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            font-size: 11.5px;
+            text-transform: uppercase;
+        }
+
+        table.obe-table tr:nth-child(even) td {
+            background-color: var(--table-row-alt);
+        }
+
+        table.obe-table tr.exam-row td {
+            background-color: #fff3cd !important;
+            font-weight: 600;
+            border-top: 2px solid #ffeeba;
+            border-bottom: 2px solid #ffeeba;
+        }
+
+        .badge-bloom {
+            display: inline-block;
+            background-color: var(--uphsd-maroon);
+            color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-po {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #333333;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10.5px;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+
+        .llo-tag {
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 10px;
+            margin-right: 4px;
+        }
+        .llo-k { background: #d1ecf1; color: #0c5460; }
+        .llo-s { background: #d4edda; color: #155724; }
+        .llo-a { background: #f8d7da; color: #721c24; }
+
+        .llo-list {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .llo-list li {
+            margin-bottom: 4px;
+        }
+
+        /* Signatures Grid */
+        .signatures-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .sig-block {
+            text-align: center;
+        }
+
+        .sig-line {
+            width: 80%;
+            margin: 40px auto 6px auto;
+            border-bottom: 1px solid #333333;
+        }
+
+        .sig-name {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .sig-title {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                font-size: 11px;
+            }
+
+            .document-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            h2.section-banner {
+                background-color: var(--uphsd-maroon) !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            table.obe-table th {
+                background-color: var(--uphsd-maroon) !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            table.obe-table tr.exam-row td {
+                background-color: #fff3cd !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        .print-btn-bar {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .print-btn {
+            background-color: var(--uphsd-maroon);
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(128,0,0,0.3);
+            transition: background 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: var(--uphsd-dark-maroon);
+        }
+    </style>
+</head>
+<body>
+
+<div class="print-btn-bar no-print">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+
+<div class="document-container">
+
+    <!-- 1. Institutional Header -->
+    <header class="inst-header-wrapper">
+        {% if header_banner_base64 %}
+        <div class="inst-banner-box">
+            <img src="data:image/png;base64,{{ header_banner_base64 }}" alt="University of Perpetual Help System DALTA - Molino Campus" class="inst-banner-img">
+            <div class="doc-syllabus-title">Outcome-Based Education (OBE) Course Syllabus</div>
+        </div>
+        {% else %}
+        <div class="inst-header">
+            {% if logo_base64 %}
+            <img src="data:image/png;base64,{{ logo_base64 }}" alt="UPHSD Logo" class="inst-logo">
+            {% else %}
+            <img src="../assets/UPHSD-logo-yellow.png" alt="UPHSD Logo" class="inst-logo" onerror="this.style.display='none'">
+            {% endif %}
+            <div class="inst-header-text">
+                <h1>University of Perpetual Help System DALTA</h1>
+                <h2>Molino Campus • College of Computer Studies</h2>
+                <p>Salawag-Zapote Road, Molino 3, City of Bacoor, 4102 Philippines</p>
+                <p>www.perpetualdalta.edu.ph; (046) 477-0602; (02) 584-4377</p>
+                <div class="doc-title">Outcome-Based Education (OBE) Course Syllabus</div>
+            </div>
+        </div>
+        {% endif %}
+    </header>
+
+    <!-- 2. Institutional Philosophy, Vision, Mission (PVM) -->
+    <h2 class="section-banner">I. Institutional Philosophy, Vision, and Mission</h2>
+    <div class="pvm-block">
+        <p><strong>Philosophy:</strong> The University of Perpetual Help System DALTA believes and invokes Divine Guidance in the betterment of the quality of life through national development and transformation, which are predicated upon the quality of education of its people. Towards this end, the Institution is committed to the ideals of teaching, community service and research as it nurtures the value of <em>"Helpers of God"</em>, with <em>"Character Building is Nation Building"</em> as its guiding principle.</p>
+        <p><strong>Vision:</strong> The University of Perpetual Help System DALTA shall emerge as a premier university in the Philippines. It shall provide a venue for the pursuit of excellence in academics, technology and research through local and international linkages. It shall produce Perpetualites as "Helpers of God", proud of their race and prepared for exemplary global participation.</p>
+        <p><strong>Mission:</strong> The University of Perpetual Help System DALTA is dedicated to the development of the Filipino as a <strong>LEADER</strong>. It aims to graduate <strong>DYNAMIC STUDENTS</strong> who are physically, intellectually, socially and spiritually committed to the achievement of the highest quality of life. It is dedicated to the <strong>FORMATION OF CHRIST-CENTERED, SERVICE-ORIENTED, AND RESEARCH-DRIVEN INDIVIDUALS</strong> with great social concern and commitment to quality education.</p>
+        <p><strong>Mission Keywords:</strong> A - Leader; B - Dynamic Students; C - Christ-centered, Service-Oriented & Research-Driven; D - Social Concern; E - Quality Education; F - Helpers of God.</p>
+    </div>
+
+    <!-- 3. Core Values & CCS PVM -->
+    <h2 class="section-banner">II. Perpetualite Core Values & CCS Objectives</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div class="pvm-block">
+            <h3 class="sub-banner" style="margin-top: 0;">Eight Perpetualite Core Values</h3>
+            <ol style="margin: 0; padding-left: 20px; font-size: 11.5px;">
+                <li>Love of God, Love of Self, Family, and Neighbor</li>
+                <li>Love of Country and Good Governance</li>
+                <li>Academic and Professional Excellence</li>
+                <li>Health and Ecological Consciousness</li>
+                <li>Peace and Global Solidarity</li>
+                <li>Filipino Christian Leadership</li>
+                <li>Value of Catholic Doctrine</li>
+                <li>UPHSD and the Perpetualite</li>
+            </ol>
+        </div>
+        <div class="pvm-block">
+            <h3 class="sub-banner" style="margin-top: 0;">College of Computer Studies Vision & Mission</h3>
+            <p style="font-size: 11.5px; margin-bottom: 6px;"><strong>CCS Vision:</strong> Envisions a cadre of graduates who successfully meet the challenges of a technology-driven global society, leading IT instruction in CALABARZON.</p>
+            <p style="font-size: 11.5px; margin: 0;"><strong>CCS Mission:</strong> Delivers quality programs in CS and IT to produce highly competent, industry-ready computing professionals.</p>
+        </div>
+    </div>
+
+    <!-- 4. Course Specification Card -->
+    <h2 class="section-banner">III. Course Specification</h2>
+    <div class="course-info-grid">
+        <div class="course-info-item">
+            <span class="course-info-label">Course Code</span>
+            <span class="course-info-val">{{ course.course_code }}</span>
+        </div>
+        <div class="course-info-item">
+            <span class="course-info-label">Course Title</span>
+            <span class="course-info-val">{{ course.course_title }}</span>
+        </div>
+        <div class="course-info-item">
+            <span class="course-info-label">Prerequisite(s)</span>
+            <span class="course-info-val">{{ course.prerequisites }}</span>
+        </div>
+        <div class="course-info-item">
+            <span class="course-info-label">Credit Units / Hours</span>
+            <span class="course-info-val">{{ course.credit_units }}</span>
+        </div>
+        <div class="course-info-item full-width">
+            <span class="course-info-label">Course Description</span>
+            <span class="course-info-val" style="font-weight: normal; margin-top: 4px;">{{ course.course_description }}</span>
+        </div>
+    </div>
+
+    <!-- 5. Course Learning Outcomes (CLOs) -->
+    <h2 class="section-banner">IV. Course Learning Outcomes (CLOs)</h2>
+    <table class="obe-table">
+        <thead>
+            <tr>
+                <th style="width: 10%;">CLO #</th>
+                <th style="width: 15%;">Bloom's Level</th>
+                <th style="width: 55%;">Course Learning Outcome Statement</th>
+                <th style="width: 20%;">Aligned POs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for co in course.course_outcomes %}
+            <tr>
+                <td style="font-weight: 700; text-align: center;">CLO {{ co.co_number }}</td>
+                <td><span class="badge-bloom">{{ co.bloom_level }}</span></td>
+                <td>{{ co.co_description }}</td>
+                <td>
+                    {% for po in co.mapped_po %}
+                    <span class="badge-po">PO {{ po }}</span>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- 6. 18-Week Detailed Learning Plan -->
+    <h2 class="section-banner">V. 18-Week Detailed Learning Plan</h2>
+    <table class="obe-table">
+        <thead>
+            <tr>
+                <th style="width: 10%;">Week & Period</th>
+                <th style="width: 25%;">Lesson Learning Outcomes (LLOs: K, S, A)</th>
+                <th style="width: 20%;">Topic / Content</th>
+                <th style="width: 20%;">Teaching & Learning Activities (TLA)</th>
+                <th style="width: 15%;">Assessment & Evidence</th>
+                <th style="width: 10%;">Aligned CLOs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in course.weekly_schedule %}
+            <tr class="{% if week.week_number in [6, 12, 18] %}exam-row{% endif %}">
+                <td style="text-align: center;">
+                    <strong>Week {{ week.week_number }}</strong><br>
+                    <small style="color: var(--uphsd-maroon); font-weight: 700;">{{ week.period }}</small>
+                </td>
+                <td>
+                    <ul class="llo-list">
+                        {% for llo in week.lesson_outcomes %}
+                        <li>
+                            <span class="llo-tag llo-{{ llo.category.lower() }}">{{ llo.category }}</span>
+                            {{ llo.description }}
+                        </li>
+                        {% else %}
+                        <li><em>Formal Institutional Examination Assessment</em></li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td><strong>{{ week.topic }}</strong></td>
+                <td>{{ week.teaching_learning_activity }}</td>
+                <td>
+                    <strong>Task:</strong> {{ week.assessment_task }}<br>
+                    <small><strong>Evidence:</strong> {{ week.result_evidence }}</small>
+                </td>
+                <td style="text-align: center;">
+                    {% for co in week.aligned_co %}
+                    <span class="badge-po" style="margin-bottom: 2px;">CO {{ co }}</span>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- 7. Assessment & Grading System -->
+    <h2 class="section-banner">VI. Course Evaluation & Grading System</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+        <div>
+            <h3 class="sub-banner">Grading Components Breakdown</h3>
+            <table class="obe-table">
+                <thead>
+                    <tr>
+                        <th>Assessment Task</th>
+                        <th style="width: 25%; text-align: right;">Weight (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for g in course.grading_breakdown %}
+                    <tr>
+                        <td>{{ g.assessment_task }}</td>
+                        <td style="text-align: right; font-weight: 700;">{{ "%.1f"|format(g.percentage_weight) }}%</td>
+                    </tr>
+                    {% endfor %}
+                    <tr style="font-weight: 800; background-color: var(--uphsd-light-gold);">
+                        <td>TOTAL</td>
+                        <td style="text-align: right; color: var(--uphsd-maroon);">100.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pvm-block">
+            <h3 class="sub-banner" style="margin-top: 0;">Institutional Grading Policy</h3>
+            <p style="font-size: 11.5px;"><strong>Base 0 Computation:</strong> Final marks are computed using standard criterion-referenced raw score percentage distribution.</p>
+            <p style="font-size: 11.5px;"><strong>Class Standing (70%):</strong> Includes hands-on laboratory exercises, programming practicals, quizzes, and project milestones.</p>
+            <p style="font-size: 11.5px;"><strong>Major Examinations (30%):</strong> Prelim Exam, Midterm Exam, and Final Exam / Capstone Defense.</p>
+            <p style="font-size: 11.5px;"><strong>Passing Grade:</strong> The minimum passing grade is <strong>75.0%</strong> (Equivalent to 3.0).</p>
+        </div>
+    </div>
+
+    <!-- 8. References & Institutional Verification -->
+    <h2 class="section-banner">VII. References & Academic Consultation</h2>
+    <div class="pvm-block" style="font-size: 11.5px;">
+        <p><strong>Prescribed Textbooks:</strong> Latest ACM/IEEE Computing Curricula recommended editions; Gordon & Cleaveger (2024), <em>Computing Principles & Applied Systems</em>; Silberschatz et al., Computing Fundamentals.</p>
+        <p><strong>Online References:</strong> CHED CMO No. 25 s. 2015 Guidelines; IEEE Computer Society Digital Library; GeeksforGeeks Computing Science Portal; W3Schools / LearnOpenGL / MDN Web Docs.</p>
+        <p><strong>Faculty Consultation Schedule:</strong> Every Tuesday & Thursday, 2:00 PM – 4:00 PM (CCS Faculty Consultation Room, Molino Campus / MS Teams).</p>
+    </div>
+
+    <!-- Signatures -->
+    <div class="signatures-grid">
+        <div class="sig-block">
+            <div class="sig-line"></div>
+            <div class="sig-name">CCS Faculty Member</div>
+            <div class="sig-title">Course Lead / Curriculum Designer</div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-line"></div>
+            <div class="sig-name">MS. JOY DEE BACSA</div>
+            <div class="sig-title">Chief Librarian, UPHSD</div>
+        </div>
+        <div class="sig-block">
+            <div class="sig-line"></div>
+            <div class="sig-name">Dean, College of Computer Studies</div>
+            <div class="sig-title">Academic Quality Assurance Committee</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

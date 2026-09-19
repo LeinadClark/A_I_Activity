@@ -1,0 +1,546 @@
+{
+  "course_code": "CS 311",
+  "course_title": "Data Mining and Knowledge Discovery",
+  "course_description": "Comprehensive study of Knowledge Discovery in Databases (KDD), data preprocessing, association rule mining (Apriori, FP-Growth), classification algorithms (Decision Trees, Naive Bayes, Random Forests), clustering (K-Means, DBSCAN), and Python data mining pipelines with scikit-learn.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "CS 211 (Data Structures), MATH 201 (Probability & Statistics)",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Apply fundamental theories, core concepts, and methodologies of Data Mining and Knowledge Discovery to solve real-world problems.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze specialized data structures, system models, and workflows within Data Mining and Knowledge Discovery.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Applying",
+      "co_description": "Execute modern domain-specific tools, practical frameworks, and standards relevant to Data Mining and Knowledge Discovery.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate competing techniques, architectural trade-offs, and quality standards in Data Mining and Knowledge Discovery.",
+      "mapped_po": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Synthesize comprehensive projects in Data Mining and Knowledge Discovery embodying professional ethics and industry best practices.",
+      "mapped_po": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Course Orientation, Syllabus Review, and Scope of Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Interactive Lecture & Environment Setup",
+      "assessment_task": "Toolchain Setup Verification",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain the primary learning objectives and career relevance of Data Mining and Knowledge Discovery"
+        },
+        {
+          "category": "S",
+          "description": "Configure development environments, software tools, or clinical protocols"
+        },
+        {
+          "category": "A",
+          "description": "Acknowledge academic integrity standards and software engineering rigor"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Core Theoretical Principles and Historical Evolution of Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Foundations Workshop & Case Study",
+      "assessment_task": "Conceptual Reflection Paper",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "State foundational theorems and core terminologies of Data Mining and Knowledge Discovery"
+        },
+        {
+          "category": "S",
+          "description": "Perform baseline domain analysis and functional problem decomposition"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate the evolution and societal impact of this discipline"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Fundamental Problem Solving and Analytical Modeling in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Hands-on Analytical Modeling Lab",
+      "assessment_task": "Diagnostic Modeling Exercise",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe the key variables, constraints, and operational frameworks"
+        },
+        {
+          "category": "S",
+          "description": "Construct initial problem-solving workflows using standard procedures"
+        },
+        {
+          "category": "A",
+          "description": "Value methodical precision when structuring domain solutions"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Standard Workflows, Syntax, and Implementation Practices in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Implementation Hands-on Lab Session",
+      "assessment_task": "Practical Exercise Submission",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate standard procedural steps and programmatic logic"
+        },
+        {
+          "category": "S",
+          "description": "Execute core procedures and write verified algorithmic modules"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate diligence in testing edge cases and boundary parameters"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Intermediate Techniques, Debugging, and Validation in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Hands-on Debugging & Optimization Workshop",
+      "assessment_task": "Validated Pipeline Output",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify standard validation protocols and common structural bugs"
+        },
+        {
+          "category": "S",
+          "description": "Apply diagnostic procedures to troubleshoot anomalies and defects"
+        },
+        {
+          "category": "A",
+          "description": "Display perseverance when debugging complex multi-component issues"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Theoretical and Hands-on Practical Examination",
+      "teaching_learning_activity": "Formal Examination Session",
+      "assessment_task": "Prelim Written & Practical Exam",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall fundamental definitions, principles, and analytical models"
+        },
+        {
+          "category": "S",
+          "description": "Execute timed practical implementations under formal exam conditions"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit honesty, composure, and professionalism during assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Intermediate Architecture and Component Design in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Architectural Design Workshop",
+      "assessment_task": "Structural Design Blueprint",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain intermediate system hierarchies and data flows in Data Mining and Knowledge Discovery"
+        },
+        {
+          "category": "S",
+          "description": "Draft modular architectures adhering to separation-of-concerns principles"
+        },
+        {
+          "category": "A",
+          "description": "Value modularity and reusability in system construction"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Quantitative and Qualitative Performance Metrics in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Performance Profiling Lab Session",
+      "assessment_task": "Benchmarking Diagnostic Sheet",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate evaluation metrics, throughput measures, and benchmark standards"
+        },
+        {
+          "category": "S",
+          "description": "Profile system performance and calculate empirical operational metrics"
+        },
+        {
+          "category": "A",
+          "description": "Commit to quantitative rigor when comparing performance trade-offs"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Advanced Algorithmic Methods and Applied Workflows in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Advanced Methods Workshop",
+      "assessment_task": "Algorithmic Implementation Task",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze specialized algorithmic paradigms and high-level mechanisms"
+        },
+        {
+          "category": "S",
+          "description": "Program advanced procedures utilizing domain libraries and APIs"
+        },
+        {
+          "category": "A",
+          "description": "Strive for algorithmic efficiency and clean software structure"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Integration of Industry Toolchains, Frameworks, and Libraries",
+      "teaching_learning_activity": "Industry Framework Lab Session",
+      "assessment_task": "Integrated Framework Module",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify modern industry frameworks and ecosystem standard tooling"
+        },
+        {
+          "category": "S",
+          "description": "Integrate third-party libraries and handle inter-module data exchanges"
+        },
+        {
+          "category": "A",
+          "description": "Display curiosity in exploring cutting-edge developer tooling"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Optimization, Resource Management, and Quality Auditing in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Code Tuning & Optimization Lab",
+      "assessment_task": "Optimization Report",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain bottleneck identification, caching, and resource minimization"
+        },
+        {
+          "category": "S",
+          "description": "Refactor suboptimal modules to enhance execution speed and reliability"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate prudence when balancing complexity against efficiency"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Practical Midterm Project Defense and Exam",
+      "teaching_learning_activity": "Formal Midterm Exam Session",
+      "assessment_task": "Midterm Project Submission & Rubric",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize intermediate theory and practical architectural frameworks"
+        },
+        {
+          "category": "S",
+          "description": "Defend a working prototype under live inspection and questioning"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate technical mastery under formal assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Advanced Specialized Concepts and Modern Paradigms in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Specialized Topics Seminar & Lab",
+      "assessment_task": "Advanced Concept Assignment",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain high-level advanced paradigms and contemporary research frontiers"
+        },
+        {
+          "category": "S",
+          "description": "Implement experimental features utilizing modern design patterns"
+        },
+        {
+          "category": "A",
+          "description": "Value innovation and forward-thinking problem solving"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Security, Safety, Ethics, and Governance Considerations in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Ethical & Security Audit Workshop",
+      "assessment_task": "Risk Assessment Matrix",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Outline ethical standards, legal responsibilities, and security threats"
+        },
+        {
+          "category": "S",
+          "description": "Perform security audits and apply defensive hardening techniques"
+        },
+        {
+          "category": "A",
+          "description": "Uphold professional ethics, user privacy, and data protection"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "Enterprise Systems Integration and Scalability for Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Scalability Lab Workshop",
+      "assessment_task": "Distributed Module Deployment",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe enterprise scalability constraints, concurrency, and distribution"
+        },
+        {
+          "category": "S",
+          "description": "Configure distributed components and handle concurrent data operations"
+        },
+        {
+          "category": "A",
+          "description": "Foster holistic architectural thinking in enterprise design"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Comprehensive Quality Assurance, Verification, and Stress Testing",
+      "teaching_learning_activity": "Automated QA and Stress Testing Lab",
+      "assessment_task": "Test Suite & Coverage Report",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain unit testing, integration testing, and regression verification"
+        },
+        {
+          "category": "S",
+          "description": "Construct automated test suites achieving comprehensive branch coverage"
+        },
+        {
+          "category": "A",
+          "description": "Maintain zero tolerance for unverified production code"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Capstone Project Consolidation, Peer Review, and Pre-Defense in Data Mining and Knowledge Discovery",
+      "teaching_learning_activity": "Collaborative Integration Workshop",
+      "assessment_task": "Pre-Defense Functional Prototype",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Consolidate all project submodules into a cohesive enterprise solution"
+        },
+        {
+          "category": "S",
+          "description": "Execute peer code reviews and incorporate constructive feedback"
+        },
+        {
+          "category": "A",
+          "description": "Practice collaborative teamwork and shared accountability"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Comprehensive Project Presentation",
+      "teaching_learning_activity": "Formal Capstone Project Defense",
+      "assessment_task": "Final Evaluation & Defense Rubric",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize all theoretical sciences and practical skills in Data Mining and Knowledge Discovery"
+        },
+        {
+          "category": "S",
+          "description": "Present and defend an enterprise-grade solution before a faculty panel"
+        },
+        {
+          "category": "A",
+          "description": "Exemplify Perpetualite leadership, virtue, and professional ethics"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Hands-on Laboratory Exercises & Coding Tasks",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Technical Seatworks",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

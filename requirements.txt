@@ -1,0 +1,13 @@
+# Core Pydantic Data Contract & Validation
+pydantic>=2.0.0
+
+# Templating & Document Export
+jinja2>=3.1.0
+python-docx>=1.0.0
+Pillow>=9.0.0
+
+# HTTP & REST Communications
+requests>=2.28.0
+
+# Web GUI Dashboard
+streamlit>=1.25.0

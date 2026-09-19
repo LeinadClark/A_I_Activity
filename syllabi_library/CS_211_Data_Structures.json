@@ -1,0 +1,547 @@
+{
+  "course_code": "CS 211",
+  "course_title": "Data Structures and Algorithms",
+  "course_description": "Abstract data types, linear and non-linear data structures including stacks, queues, linked lists, binary search trees, heaps, hash tables, and asymptotic Big-O algorithmic complexity analysis.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "CS 102 (Intermediate Programming)",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Implement linear data structures including arrays, linked lists, stacks, and queues to solve computing problems.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze the time and space complexity of iterative and recursive algorithms using asymptotic Big-O notation.",
+      "mapped_po": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Applying",
+      "co_description": "Construct non-linear hierarchical data structures such as binary search trees, AVL trees, heaps, and graphs.",
+      "mapped_po": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate collision resolution techniques in hash tables and compare shortest path graph traversal algorithms.",
+      "mapped_po": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Design and synthesize optimized software modules integrating compound data structures for complex systems.",
+      "mapped_po": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Course Orientation & Review of Pointers and Memory Allocation",
+      "teaching_learning_activity": "Interactive Lecture & IDE Memory Debugging Lab",
+      "assessment_task": "Memory Leak Profiling Task",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain memory allocation fundamentals in heap and stack memory"
+        },
+        {
+          "category": "S",
+          "description": "Write pointer manipulation functions without memory leaks"
+        },
+        {
+          "category": "A",
+          "description": "Acknowledge software engineering discipline and academic integrity"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Abstract Data Types (ADTs) and Dynamic Array Implementations",
+      "teaching_learning_activity": "Dynamic Array Structuring Coding Lab",
+      "assessment_task": "Dynamic Vector Benchmarking",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define abstract data types versus concrete data structures"
+        },
+        {
+          "category": "S",
+          "description": "Implement dynamic resizing arrays with amortization"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate memory efficiency and bounds checking"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Singly and Doubly Linked Lists: Insertion, Traversal, and Deletion",
+      "teaching_learning_activity": "Hands-on Linked List Pointer Linking Lab",
+      "assessment_task": "Linked List Operation Suite",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe node linking mechanics and memory pointer updates"
+        },
+        {
+          "category": "S",
+          "description": "Code insertion, traversal, and deletion in linked lists"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate patience when debugging null pointer dereferences"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Stack Data Structures: LIFO Mechanics and Expression Parsing",
+      "teaching_learning_activity": "Stack Implementation & Infix-to-Postfix Lab",
+      "assessment_task": "Expression Evaluator Task",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain LIFO operations and call stack mechanisms"
+        },
+        {
+          "category": "S",
+          "description": "Implement stack operations and expression conversion algorithms"
+        },
+        {
+          "category": "A",
+          "description": "Value clean modularization in data structure interfaces"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Queue Data Structures: FIFO Mechanics, Circular Queues, and Deques",
+      "teaching_learning_activity": "Queue Buffer Coding Session",
+      "assessment_task": "Circular Buffer Performance Task",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate linear queues from circular buffer queues"
+        },
+        {
+          "category": "S",
+          "description": "Construct circular queue arrays and linked queue variants"
+        },
+        {
+          "category": "A",
+          "description": "Display diligence in handling queue overflow and underflow"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Linear Data Structures Theory and Practical Coding Exam",
+      "teaching_learning_activity": "Formal Prelim Exam Session",
+      "assessment_task": "Prelim Written & Practical Exam",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall fundamental linear ADTs and algorithm definitions"
+        },
+        {
+          "category": "S",
+          "description": "Implement timed linear data structure operations under exam conditions"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit academic integrity and professional composure"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Algorithm Analysis: Big-O, Big-Omega, and Big-Theta Notations",
+      "teaching_learning_activity": "Asymptotic Complexity Analysis Workshop",
+      "assessment_task": "Algorithm Benchmarking Report",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate mathematical equations for asymptotic Big-O bounds"
+        },
+        {
+          "category": "S",
+          "description": "Profile runtime performance across differing input scales"
+        },
+        {
+          "category": "A",
+          "description": "Embrace mathematical rigor in performance evaluations"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Recursion Fundamentals, Recurrence Relations, and Master Theorem",
+      "teaching_learning_activity": "Recursive Problem Solving Lab",
+      "assessment_task": "Recursive Fibonacci & Hanoi Task",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain divide-and-conquer paradigms and recurrence relations"
+        },
+        {
+          "category": "S",
+          "description": "Write recursive algorithms with robust base termination conditions"
+        },
+        {
+          "category": "A",
+          "description": "Value conceptual elegance in recursive logic"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Elementary Sorting (Bubble, Insertion, Selection) vs Advanced Sorting (Merge, Quick)",
+      "teaching_learning_activity": "Comparative Sorting Workshop",
+      "assessment_task": "Sorting Performance Benchmark",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze average and worst-case complexities of comparison sorts"
+        },
+        {
+          "category": "S",
+          "description": "Implement in-place quicksort and stable mergesort routines"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate algorithmic efficiency in data organization"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Binary Trees and Binary Search Trees (BST): Traversals and Search",
+      "teaching_learning_activity": "BST Node Manipulation Workshop",
+      "assessment_task": "BST Implementation Assignment",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify tree terminology (height, depth, internal nodes)"
+        },
+        {
+          "category": "S",
+          "description": "Code preorder, inorder, and postorder tree traversal functions"
+        },
+        {
+          "category": "A",
+          "description": "Display curiosity when exploring tree balancing concepts"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Self-Balancing Trees: AVL Trees and Rotations",
+      "teaching_learning_activity": "Tree Rotation Hands-on Coding Lab",
+      "assessment_task": "AVL Balancing Verification",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain balance factors and tree rotation types (LL, RR, LR, RL)"
+        },
+        {
+          "category": "S",
+          "description": "Implement height-balanced node rotations in AVL trees"
+        },
+        {
+          "category": "A",
+          "description": "Value mathematical equilibrium in data preservation"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Tree Structures and Algorithm Analysis Practical Exam",
+      "teaching_learning_activity": "Formal Midterm Exam Session",
+      "assessment_task": "Midterm Hands-on Coding Exam",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize asymptotic analysis and hierarchical tree concepts"
+        },
+        {
+          "category": "S",
+          "description": "Execute live balanced tree insertion and deletion algorithms"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate technical mastery under formal timed evaluation"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Priority Queues and Binary Heaps: Min-Heap and Max-Heap Operations",
+      "teaching_learning_activity": "Heapify and Priority Queue Coding Lab",
+      "assessment_task": "HeapSort Implementation Task",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        3,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe complete binary tree properties and array heap representations"
+        },
+        {
+          "category": "S",
+          "description": "Implement heapify-up and heapify-down priority queue operations"
+        },
+        {
+          "category": "A",
+          "description": "Value algorithmic precision in priority scheduling"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Hash Tables, Hash Functions, and Collision Resolution (Chaining vs Open Addressing)",
+      "teaching_learning_activity": "Hash Map Coding and Collision Profiling",
+      "assessment_task": "Dictionary ADT Implementation",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain hash distributions, load factors, and collision handling"
+        },
+        {
+          "category": "S",
+          "description": "Construct hash tables with linear probing and chaining"
+        },
+        {
+          "category": "A",
+          "description": "Diligently assess security and distribution of hash algorithms"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "Graph Theory: Adjacency Matrices, Adjacency Lists, and Graph Traversals (BFS & DFS)",
+      "teaching_learning_activity": "Graph Representation Lab Session",
+      "assessment_task": "Social Network Graph Traversal",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        3,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define vertices, directed/undirected edges, and weighted graphs"
+        },
+        {
+          "category": "S",
+          "description": "Program Breadth-First Search (BFS) and Depth-First Search (DFS)"
+        },
+        {
+          "category": "A",
+          "description": "Foster logical thinking in complex network modelling"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Shortest Paths & Minimum Spanning Trees: Dijkstra’s and Kruskal’s Algorithms",
+      "teaching_learning_activity": "Pathfinding Algorithm Workshop",
+      "assessment_task": "Shortest Path Routing Engine",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze greedy algorithmic strategies for graphs"
+        },
+        {
+          "category": "S",
+          "description": "Implement Dijkstra’s shortest path algorithm using priority queues"
+        },
+        {
+          "category": "A",
+          "description": "Strive for excellence in route optimization solutions"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Comprehensive Project Integration and Compound Data Structure Architecture",
+      "teaching_learning_activity": "Integrated System Workshop & Code Review",
+      "assessment_task": "Pre-Defense Software Prototype",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Structure compound data structures for multi-layered computing problems"
+        },
+        {
+          "category": "S",
+          "description": "Collaborate on complex codebase integration and unit testing"
+        },
+        {
+          "category": "A",
+          "description": "Practice constructive peer critique and collaborative teamwork"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Data Structures Engine Evaluation",
+      "teaching_learning_activity": "Formal Capstone Project Defense",
+      "assessment_task": "Final Examination Rubric & Defense",
+      "result_evidence": "Lab Portfolio / Benchmarking Report",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize all linear and non-linear data structures paradigms"
+        },
+        {
+          "category": "S",
+          "description": "Present and defend functional enterprise data structure solution"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate Perpetualite professional ethics and leadership"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Hands-on Laboratory Coding Tasks & Projects",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Algorithmic Problem Sets",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

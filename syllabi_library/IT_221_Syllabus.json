@@ -1,0 +1,541 @@
+{
+  "course_code": "IT 221",
+  "course_title": "Web Systems and Technologies",
+  "course_description": "Comprehensive study of modern client-server web architectures, responsive frontend development (HTML5/CSS3/JavaScript), RESTful API engineering, backend services, database persistence, web security vulnerabilities, and cloud deployment.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "CS 102",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Implement modern, accessible responsive web user interfaces using HTML5, CSS3, and JavaScript.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Applying",
+      "co_description": "Develop scalable asynchronous frontend applications leveraging component state and API integration.",
+      "mapped_po": [
+        1,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze client-server architectures, HTTP protocols, RESTful API conventions, and JSON serialization.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate web security vulnerabilities including XSS, CSRF, and SQL Injection using security audits.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Design and deploy full-stack database-driven web applications integrating secure authentication and cloud hosting.",
+      "mapped_po": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Web Architecture, Client-Server Model, HTTP Protocols, and Tooling",
+      "teaching_learning_activity": "Interactive Lecture and VSCode Web Extension Setup",
+      "assessment_task": "Developer Environment Setup Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain request-response lifecycles, DNS resolution, and HTTP headers"
+        },
+        {
+          "category": "S",
+          "description": "Configure modern web developer tools, Git, and live servers"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate web standards set forth by the W3C"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Semantic HTML5 Elements, Document Outlines, and Web Accessibility (a11y)",
+      "teaching_learning_activity": "Accessible Page Construction Lab",
+      "assessment_task": "WCAG Compliant Page Prototype",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify semantic markup tags (header, nav, main, section, footer)"
+        },
+        {
+          "category": "S",
+          "description": "Build accessible form controls and ARIA attributes for screen readers"
+        },
+        {
+          "category": "A",
+          "description": "Value inclusivity and accessibility for diverse user groups"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Modern CSS3: Box Model, Flexbox Layouts, and CSS Grid Systems",
+      "teaching_learning_activity": "Responsive Layout Workshop",
+      "assessment_task": "Multi-Column Layout Grid",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast block, inline, flex, and grid CSS formatting models"
+        },
+        {
+          "category": "S",
+          "description": "Implement responsive flexbox navigation and grid content cards"
+        },
+        {
+          "category": "A",
+          "description": "Strive for aesthetic balance and clean typographic hierarchy"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Responsive Web Design: Mobile-First Strategy and Media Queries",
+      "teaching_learning_activity": "Mobile-First Design Lab Session",
+      "assessment_task": "Responsive Multi-Device Site",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain viewport configurations, responsive breakpoints, and REM units"
+        },
+        {
+          "category": "S",
+          "description": "Construct responsive layouts adapting fluidly to mobile and desktop"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate empathy for mobile users with limited bandwidth"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Core JavaScript: ES6+ Syntax, DOM Manipulation, and Event Handling",
+      "teaching_learning_activity": "Interactive DOM Scripting Lab",
+      "assessment_task": "Dynamic UI Component Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe closures, arrow functions, destructuring, and event bubbling"
+        },
+        {
+          "category": "S",
+          "description": "Write JavaScript manipulating the DOM in response to user events"
+        },
+        {
+          "category": "A",
+          "description": "Display diligence when validating user inputs on the frontend"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Frontend Architecture and Responsive Design Exam",
+      "teaching_learning_activity": "Formal Prelim Written & Practical Exam",
+      "assessment_task": "Prelim Practical Submission & Rubric",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall HTTP response codes, CSS layout algorithms, and DOM hierarchy"
+        },
+        {
+          "category": "S",
+          "description": "Code a timed responsive web interface from design mockups"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit professionalism and academic honesty under timed assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Asynchronous JavaScript: Promises, Async/Await, and Fetch API",
+      "teaching_learning_activity": "Async Data Fetching Workshop",
+      "assessment_task": "Weather Dashboard App",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain single-threaded event loops, call stacks, and callback queues"
+        },
+        {
+          "category": "S",
+          "description": "Fetch and parse remote JSON payloads using async/await patterns"
+        },
+        {
+          "category": "A",
+          "description": "Value graceful error handling during network latencies"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Frontend Framework Concepts: Component-Based Architecture and Virtual DOM",
+      "teaching_learning_activity": "Component Structure Lab Session",
+      "assessment_task": "Reusable UI Component Suite",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate imperative DOM manipulation versus declarative components"
+        },
+        {
+          "category": "S",
+          "description": "Construct reusable UI components passing dynamic properties (props)"
+        },
+        {
+          "category": "A",
+          "description": "Commit to modular, reusable software architecture"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Component State Management, Lifecycle Hooks, and Forms",
+      "teaching_learning_activity": "Interactive State Management Workshop",
+      "assessment_task": "Reactive Todo Application",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain unidirectional data flow and reactive state mutation rules"
+        },
+        {
+          "category": "S",
+          "description": "Manage local component state and handle controlled form inputs"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate immediate feedback loops in user interfaces"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Backend Engineering: Node.js/Python Servers and RESTful Route Handlers",
+      "teaching_learning_activity": "REST API Development Lab",
+      "assessment_task": "CRUD REST Endpoint Suite",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define REST architectural constraints, idempotency, and URI schemes"
+        },
+        {
+          "category": "S",
+          "description": "Build HTTP GET, POST, PUT, DELETE routes handling JSON requests"
+        },
+        {
+          "category": "A",
+          "description": "Emphasize clean API documentation and uniform route naming"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Database Integration: Connecting Web Servers to Relational/NoSQL Stores",
+      "teaching_learning_activity": "Database Connection Workshop",
+      "assessment_task": "Database-Driven API Service",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast SQL relational queries with document collection paradigms"
+        },
+        {
+          "category": "S",
+          "description": "Perform CRUD database operations through server-side connection pools"
+        },
+        {
+          "category": "A",
+          "description": "Value ACID transactions and data consistency in web stores"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Full-Stack API Integration Practical Exam",
+      "teaching_learning_activity": "Formal Midterm Exam Session",
+      "assessment_task": "Midterm Full-Stack Project Defense",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize asynchronous frontend requests and backend API controllers"
+        },
+        {
+          "category": "S",
+          "description": "Deploy and test integrated client-server data flows under inspection"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate technical competence under formal assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Web Security Essentials: OWASP Top 10, Cross-Site Scripting (XSS), and CSRF",
+      "teaching_learning_activity": "Security Audit and Penetration Lab",
+      "assessment_task": "Vulnerability Audit Report",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain XSS vectors, CSRF tokens, and Content Security Policies (CSP)"
+        },
+        {
+          "category": "S",
+          "description": "Audit and patch vulnerable client-side input reflection points"
+        },
+        {
+          "category": "A",
+          "description": "Uphold ethical responsibility in safeguarding user privacy"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Authentication & Authorization: Password Hashing, JWT, and Sessions",
+      "teaching_learning_activity": "JWT Authentication Coding Workshop",
+      "assessment_task": "Secure Login/Register Engine",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe cryptographic salting, bcrypt hashing, and JWT signatures"
+        },
+        {
+          "category": "S",
+          "description": "Implement secure login routes issuing signed JSON Web Tokens"
+        },
+        {
+          "category": "A",
+          "description": "Commit to zero plain-text credential persistence in databases"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "SQL Injection Prevention and Server-Side Input Sanitization",
+      "teaching_learning_activity": "SQLi Remediation Lab Session",
+      "assessment_task": "Sanitized Database Layer Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze raw query vulnerabilities versus parameterized statements"
+        },
+        {
+          "category": "S",
+          "description": "Refactor vulnerable database queries to use prepared parameters"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate vigilance in defensive coding practices"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Web Performance Optimization: Asset Minification, Caching, and CDN",
+      "teaching_learning_activity": "Performance Profiling Workshop",
+      "assessment_task": "Lighthouse Audit Optimization",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain browser caching headers, gzip compression, and tree-shaking"
+        },
+        {
+          "category": "S",
+          "description": "Profile website performance using Chrome Lighthouse and optimize assets"
+        },
+        {
+          "category": "A",
+          "description": "Strive for excellence in sub-second page loading speeds"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Full-Stack Deployment: Containerization, CI/CD, and Cloud Hosting",
+      "teaching_learning_activity": "Cloud Deployment Lab (Vercel / Render)",
+      "assessment_task": "Production Live URL Submission",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Outline environmental variables, production builds, and continuous delivery"
+        },
+        {
+          "category": "S",
+          "description": "Deploy full-stack web applications to live cloud hosting environments"
+        },
+        {
+          "category": "A",
+          "description": "Practice constructive team coordination during release cycles"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Enterprise Web Solution Showcase",
+      "teaching_learning_activity": "Formal Capstone Project Defense",
+      "assessment_task": "Final Project Evaluation & Rubric",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize all frontend, backend, security, and deployment domains"
+        },
+        {
+          "category": "S",
+          "description": "Present and defend a live, responsive full-stack web application"
+        },
+        {
+          "category": "A",
+          "description": "Exemplify Perpetualite leadership and professional presentation ethics"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Full-Stack Web Coding Labs & Milestones",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Security Assessments",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Web Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

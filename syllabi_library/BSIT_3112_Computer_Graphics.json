@@ -1,0 +1,541 @@
+{
+  "course_code": "BSIT 3112",
+  "course_title": "Computer Graphics and Programming",
+  "course_description": "Introduction to the mathematics of computer graphics and 3D visual computing. Topics include coordinate frames, vector mathematics, primitive rasterization, 2D/3D affine transformations, projection frustums, lighting models (Phong), shading techniques, texture mapping, and OpenGL programming with GPU pipeline optimization.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "BSIT 2104 (Object-Oriented Programming)",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Implement primitive geometric rendering algorithms and coordinate transformations using graphics libraries.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Evaluating",
+      "co_description": "Formulate mathematical projection matrices and evaluate GPU rendering pipeline bottlenecks.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate lighting and illumination models (Phong, Blinn-Phong, Gouraud) for real-time visual realism.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Creating",
+      "co_description": "Design and synthesize interactive 3D graphical applications incorporating texture mapping and user input events.",
+      "mapped_po": [
+        1,
+        4,
+        6
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Applying",
+      "co_description": "Demonstrate professional collaborative practices and code documentation in computer graphics team development.",
+      "mapped_po": [
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Course Orientation, Syllabus Review, and Graphics Systems Architecture",
+      "teaching_learning_activity": "Interactive Lecture and Environment Setup",
+      "assessment_task": "IDE Setup Verification",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain the course learning objectives and graphics hardware roles"
+        },
+        {
+          "category": "S",
+          "description": "Install and configure IDE with graphics libraries (OpenGL/GLFW)"
+        },
+        {
+          "category": "A",
+          "description": "Acknowledge the academic integrity policy and software engineering rigor"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Mathematics of Graphics: Vector Spaces, Points, and Coordinate Frames",
+      "teaching_learning_activity": "Mathematical Problem Solving and Lab Demo",
+      "assessment_task": "Vector Math Problem Set",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "State mathematical properties of dot products, cross products, and matrices"
+        },
+        {
+          "category": "S",
+          "description": "Write functions calculating vector normalizations and transformations"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate mathematical rigor in visual computing"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Primitive Geometry Generation and Bresenham Line/Circle Algorithms",
+      "teaching_learning_activity": "Hands-on Primitive Rasterization Lab",
+      "assessment_task": "Rasterization Output Review",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe rasterization concepts and scan conversion mechanics"
+        },
+        {
+          "category": "S",
+          "description": "Implement line and circle drawing algorithms programmatically"
+        },
+        {
+          "category": "A",
+          "description": "Value algorithmic efficiency in low-level rendering"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "2D Transformations: Translation, Scaling, Rotation, and Homogeneous Coordinates",
+      "teaching_learning_activity": "Matrix Transform Coding Session",
+      "assessment_task": "Transform Matrix Exercise",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate 3x3 homogeneous transformation matrices"
+        },
+        {
+          "category": "S",
+          "description": "Construct composite transformation routines in code"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate precision in matrix multiplication orders"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Viewing in 2D, Clipping Algorithms (Cohen-Sutherland), and Window-to-Viewport",
+      "teaching_learning_activity": "Clipping Implementation Lab",
+      "assessment_task": "Clipping Test Suite",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain Cohen-Sutherland outcode tests and viewport mapping"
+        },
+        {
+          "category": "S",
+          "description": "Apply clipping algorithms to boundary geometries"
+        },
+        {
+          "category": "A",
+          "description": "Display diligence when debugging boundary clipping conditions"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Theoretical and Hands-on Practical Exam",
+      "teaching_learning_activity": "Formal Examination Session",
+      "assessment_task": "Prelim Written & Practical Exam",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall fundamental math and primitive rendering theories"
+        },
+        {
+          "category": "S",
+          "description": "Execute live timed transformation coding problems"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit professionalism and honesty under timed assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "3D Coordinate Transformations and Euler Angles",
+      "teaching_learning_activity": "3D Transformation Hands-on Workshop",
+      "assessment_task": "3D Object Manipulation Task",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate 2D versus 3D affine transformation matrices"
+        },
+        {
+          "category": "S",
+          "description": "Program 3D translation, pitch, yaw, and roll rotations"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit meticulous attention to gimbal lock considerations"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Projections: Orthographic vs. Perspective Viewing Frustums",
+      "teaching_learning_activity": "Camera View Matrix Coding Lab",
+      "assessment_task": "Perspective Frustum Project",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain field of view (FOV), aspect ratio, and projection planes"
+        },
+        {
+          "category": "S",
+          "description": "Compute view matrices for movable synthetic cameras"
+        },
+        {
+          "category": "A",
+          "description": "Value user visual comfort in virtual camera placement"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Polygonal Meshes, Normal Vectors, and Hidden Surface Removal",
+      "teaching_learning_activity": "Depth Buffering (Z-buffer) Practical Session",
+      "assessment_task": "Mesh Rendering Lab",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze Z-buffering algorithms and face-culling techniques"
+        },
+        {
+          "category": "S",
+          "description": "Calculate surface normal vectors for triangle meshes"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate resource optimization in polygon management"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Illumination Principles: Ambient, Diffuse, and Specular Reflection",
+      "teaching_learning_activity": "Light Shader Coding Workshop",
+      "assessment_task": "Basic Shading Assessment",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate vectors for Lambertian diffuse and specular highlights"
+        },
+        {
+          "category": "S",
+          "description": "Code basic color modulation reflecting light source distances"
+        },
+        {
+          "category": "A",
+          "description": "Display curiosity in physical optical approximations"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Shading Models: Flat, Gouraud, and Phong Interpolation",
+      "teaching_learning_activity": "Comparative Shading Lab Exercise",
+      "assessment_task": "Shading Models Comparison Sheet",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast per-vertex versus per-fragment normal interpolation"
+        },
+        {
+          "category": "S",
+          "description": "Implement Phong reflection model shaders"
+        },
+        {
+          "category": "A",
+          "description": "Commit to visual fidelity versus computational trade-offs"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Practical 3D Camera & Shading Project Evaluation",
+      "teaching_learning_activity": "Formal Midterm Exam Session",
+      "assessment_task": "Midterm Project Defense",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize 3D transforms, camera views, and lighting concepts"
+        },
+        {
+          "category": "S",
+          "description": "Demonstrate working 3D scene rendering under inspection"
+        },
+        {
+          "category": "A",
+          "description": "Defend technical architecture decisions before evaluators"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Texture Mapping Foundations: UV Coordinates and Texture Sampling",
+      "teaching_learning_activity": "UV Unwrapping & Texture Lab",
+      "assessment_task": "Textured Geometry Output",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain UV unwrapping, mipmapping, and bilinear filtering"
+        },
+        {
+          "category": "S",
+          "description": "Map 2D texture images onto 3D geometric surfaces"
+        },
+        {
+          "category": "A",
+          "description": "Value aesthetic craftsmanship in asset integration"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Advanced Texturing: Normal Mapping and Alpha Blending",
+      "teaching_learning_activity": "Shader Map Implementation",
+      "assessment_task": "Normal Mapping Shader Task",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe tangent space normal mapping and transparency blending"
+        },
+        {
+          "category": "S",
+          "description": "Code fragment shaders computing perturbed surface normals"
+        },
+        {
+          "category": "A",
+          "description": "Show patience in debugging transparency rendering order"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "User Interactivity, Mouse Raycasting, and Event-Driven Animation",
+      "teaching_learning_activity": "Interactive Graphics Controller Workshop",
+      "assessment_task": "Interactive Prototype Review",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain screen-to-world raycasting and event queues"
+        },
+        {
+          "category": "S",
+          "description": "Integrate keyboard and mouse camera steering loops"
+        },
+        {
+          "category": "A",
+          "description": "Foster user-centric thinking in interactive interface design"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Graphics Engine Optimization: Framebuffer Objects and Draw Call Batching",
+      "teaching_learning_activity": "Profiling and Performance Optimization Lab",
+      "assessment_task": "Benchmarking Report",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        2,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze GPU pipeline bottlenecks and draw call overheads"
+        },
+        {
+          "category": "S",
+          "description": "Profile frames per second (FPS) and optimize vertex buffers"
+        },
+        {
+          "category": "A",
+          "description": "Uphold performance excellence in high-demand rendering"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Capstone Graphics Project Integration and Peer Playtesting",
+      "teaching_learning_activity": "Collaborative Code Integration Workshop",
+      "assessment_task": "Pre-Defense Prototype",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Structure full interactive graphics engine components"
+        },
+        {
+          "category": "S",
+          "description": "Collaborate on multi-module codebases using version control"
+        },
+        {
+          "category": "A",
+          "description": "Practice constructive peer critique and team accountability"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Formal Evaluation",
+      "teaching_learning_activity": "Formal Project Defense and Presentation",
+      "assessment_task": "Final Capstone Evaluation & Rubric",
+      "result_evidence": "Lab Portfolio / Project Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize all graphics programming theories and practices"
+        },
+        {
+          "category": "S",
+          "description": "Present and defend functional 3D graphical software solution"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate Perpetualite professional leadership and ethics"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Hands-on Laboratory Exercises & Coding Tasks",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Technical Seatworks",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

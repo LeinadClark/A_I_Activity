@@ -1,0 +1,548 @@
+{
+  "course_code": "BSCS 3109",
+  "course_title": "Operating System and Configuration Use",
+  "course_description": "Kernel architectures, process and memory management, storage system administration, virtualization technologies, shell scripting, automation, and enterprise security hardening using firewalls and Role-Based Access Control (RBAC).",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "CS 205",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Apply fundamental theories and methodologies of the subject to practical scenarios.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze the components of an operating system and their interactions.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate the security and performance of an operating system configuration.",
+      "mapped_po": [
+        5,
+        6
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Creating",
+      "co_description": "Creating advanced paradigms, computational models, and design standards in Operating System and Configuration Use.",
+      "mapped_po": [
+        5
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Introduction to Operating Systems",
+      "teaching_learning_activity": "Interactive Lecture",
+      "assessment_task": "Pre-assessment Quiz",
+      "result_evidence": "Pre-assessment Quiz Scores",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify the foundational principles and scope of the subject."
+        },
+        {
+          "category": "S",
+          "description": "Outline the structure and functions of an operating system."
+        },
+        {
+          "category": "A",
+          "description": "Value the importance of operating system security and reliability."
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Kernel Architectures",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Setting up a Basic OS Environment",
+      "result_evidence": "Configured Environment",
+      "aligned_co": [
+        1,
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe the different kernel architectures and their characteristics."
+        },
+        {
+          "category": "S",
+          "description": "Configure a basic operating system environment."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to professional standards in setting up an OS environment."
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Process and Memory Management",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Process Management",
+      "result_evidence": "Process Management Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain the concepts of process and memory management."
+        },
+        {
+          "category": "S",
+          "description": "Implement process management techniques in an OS."
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate ethical use of resources in process management."
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Storage System Administration",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: File System Management",
+      "result_evidence": "File System Management Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend the principles of storage system administration."
+        },
+        {
+          "category": "S",
+          "description": "Manage file systems and storage devices."
+        },
+        {
+          "category": "A",
+          "description": "Ensure data integrity and security in storage management."
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Virtualization Technologies",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Virtual Machine Setup",
+      "result_evidence": "Virtual Machine Setup Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe virtualization technologies and their applications."
+        },
+        {
+          "category": "S",
+          "description": "Set up and manage virtual machines."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in virtualization."
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination",
+      "teaching_learning_activity": "Preliminary Examination",
+      "assessment_task": "Preliminary Examination",
+      "result_evidence": "Preliminary Examination Scores",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Demonstrate knowledge of the subject matter."
+        },
+        {
+          "category": "S",
+          "description": "Apply knowledge to practical scenarios."
+        },
+        {
+          "category": "A",
+          "description": "Show commitment to professional ethics and standards."
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Shell Scripting and Automation",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Shell Scripting",
+      "result_evidence": "Shell Scripting Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend shell scripting and automation concepts."
+        },
+        {
+          "category": "S",
+          "description": "Write and execute shell scripts for automation."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in scripting."
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Enterprise Security Hardening",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Firewall and RBAC Configuration",
+      "result_evidence": "Firewall and RBAC Configuration Report",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe security hardening techniques and tools."
+        },
+        {
+          "category": "S",
+          "description": "Configure firewalls and implement RBAC policies."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in security hardening."
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Security Auditing and Compliance",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Security Auditing",
+      "result_evidence": "Security Auditing Report",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend security auditing and compliance requirements."
+        },
+        {
+          "category": "S",
+          "description": "Conduct security audits and generate reports."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in security auditing."
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Advanced Security Techniques",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Advanced Security Techniques",
+      "result_evidence": "Advanced Security Techniques Report",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe advanced security techniques and their applications."
+        },
+        {
+          "category": "S",
+          "description": "Implement advanced security techniques in an OS environment."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in advanced security."
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Operating System Performance Tuning",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Performance Tuning",
+      "result_evidence": "Performance Tuning Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend performance tuning concepts and tools."
+        },
+        {
+          "category": "S",
+          "description": "Tune the performance of an operating system."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in performance tuning."
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination",
+      "teaching_learning_activity": "Midterm Examination",
+      "assessment_task": "Midterm Examination",
+      "result_evidence": "Midterm Examination Scores",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Demonstrate knowledge of the subject matter."
+        },
+        {
+          "category": "S",
+          "description": "Apply knowledge to practical scenarios."
+        },
+        {
+          "category": "A",
+          "description": "Show commitment to professional ethics and standards."
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Operating System Security Policies",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Security Policy Implementation",
+      "result_evidence": "Security Policy Implementation Report",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend security policies and their implementation."
+        },
+        {
+          "category": "S",
+          "description": "Implement security policies in an OS environment."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in policy implementation."
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Operating System Updates and Patch Management",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Patch Management",
+      "result_evidence": "Patch Management Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend update and patch management processes."
+        },
+        {
+          "category": "S",
+          "description": "Manage updates and patches in an OS environment."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in update management."
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "Operating System Monitoring and Logging",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Lab Exercise: Monitoring and Logging",
+      "result_evidence": "Monitoring and Logging Report",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Comprehend monitoring and logging concepts and tools."
+        },
+        {
+          "category": "S",
+          "description": "Set up and manage monitoring and logging systems."
+        },
+        {
+          "category": "A",
+          "description": "Adhere to ethical and professional standards in monitoring and logging."
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Capstone Project Planning",
+      "teaching_learning_activity": "Lecture and Lab",
+      "assessment_task": "Capstone Project Proposal",
+      "result_evidence": "Capstone Project Proposal",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Plan and design a capstone project."
+        },
+        {
+          "category": "S",
+          "description": "Develop a project proposal and timeline."
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate teamwork and ethical conduct in project planning."
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Capstone Project Implementation",
+      "teaching_learning_activity": "Capstone Project Work",
+      "assessment_task": "Capstone Project Milestone",
+      "result_evidence": "Capstone Project Milestone Report",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Implement and manage a capstone project."
+        },
+        {
+          "category": "S",
+          "description": "Execute project tasks and deliverables."
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate teamwork and ethical conduct in project execution."
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense",
+      "teaching_learning_activity": "Final Examination and Capstone Defense",
+      "assessment_task": "Final Examination and Capstone Defense",
+      "result_evidence": "Final Examination and Capstone Defense Scores",
+      "aligned_co": [
+        1,
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Demonstrate comprehensive knowledge of the subject."
+        },
+        {
+          "category": "S",
+          "description": "Apply knowledge to practical scenarios."
+        },
+        {
+          "category": "A",
+          "description": "Show commitment to professional ethics and standards."
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Hands-on Laboratory Exercises",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes and Seatworks",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Final Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Capstone Project",
+      "percentage_weight": 10.0
+    }
+  ]
+}

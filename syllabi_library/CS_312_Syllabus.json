@@ -1,0 +1,540 @@
+{
+  "course_code": "CS 312",
+  "course_title": "Artificial Intelligence and Machine Learning",
+  "course_description": "Foundational study of intelligent agents, problem solving via heuristic search (A*, Minimax), knowledge representation, supervised learning, neural network architectures, PyTorch implementation, and computer vision with convolutional neural networks.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "CS 211, MATH 202",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Implement classical search algorithms including BFS, DFS, A* heuristic search, and Minimax game playing.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze supervised regression and classification models using gradient descent optimization.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Applying",
+      "co_description": "Construct multi-layer perceptron (MLP) neural networks using PyTorch for pattern recognition.",
+      "mapped_po": [
+        2,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate convolutional neural network (CNN) architectures on visual classification tasks.",
+      "mapped_po": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Design an intelligent agent solving real-world automated reasoning or computer vision problems.",
+      "mapped_po": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Introduction to AI, Turing Test, Rational Agents, and PEAS Descriptions",
+      "teaching_learning_activity": "Agent Design Workshop and Python Setup",
+      "assessment_task": "PEAS Agent Specification",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define intelligence paradigms and rational agent classifications"
+        },
+        {
+          "category": "S",
+          "description": "Construct PEAS (Performance, Environment, Actuators, Sensors) models"
+        },
+        {
+          "category": "A",
+          "description": "Acknowledge the ethical considerations of autonomous agents"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Uninformed Search Strategies: Breadth-First, Depth-First, and Uniform-Cost",
+      "teaching_learning_activity": "Search Algorithm Coding Lab",
+      "assessment_task": "State Space Graph Explorer",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate state space graphs and search frontier mechanics"
+        },
+        {
+          "category": "S",
+          "description": "Implement BFS and DFS maze traversal algorithms in Python"
+        },
+        {
+          "category": "A",
+          "description": "Value algorithmic completeness versus memory space trade-offs"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Informed (Heuristic) Search: Greedy Best-First Search and A* Algorithm",
+      "teaching_learning_activity": "A* Pathfinding Workshop",
+      "assessment_task": "A* Grid Navigation Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain admissible and consistent heuristic properties"
+        },
+        {
+          "category": "S",
+          "description": "Code the A* algorithm using priority queues and Manhattan distance"
+        },
+        {
+          "category": "A",
+          "description": "Strive for optimal pathfinding performance"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Adversarial Search: Game Playing, Minimax Algorithm, and Alpha-Beta Pruning",
+      "teaching_learning_activity": "Game AI Coding Lab (Tic-Tac-Toe / Connect-4)",
+      "assessment_task": "Minimax Game Engine",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe game trees, utility functions, and zero-sum game dynamics"
+        },
+        {
+          "category": "S",
+          "description": "Implement Minimax decision trees with Alpha-Beta pruning"
+        },
+        {
+          "category": "A",
+          "description": "Display patience and rigor in debugging recursive game states"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Constraint Satisfaction Problems (CSP): Backtracking and Forward Checking",
+      "teaching_learning_activity": "CSP Problem Solving Lab (N-Queens / Sudoku)",
+      "assessment_task": "Sudoku Solver Program",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain variables, domains, constraints, and arc consistency"
+        },
+        {
+          "category": "S",
+          "description": "Write constraint satisfaction backtracking solvers"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate pruning efficiency in combinatorial spaces"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: Problem Formulation and Search Algorithms Exam",
+      "teaching_learning_activity": "Formal Prelim Written & Practical Exam",
+      "assessment_task": "Prelim Exam Rubric & Score",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall search theorems, heuristic equations, and complexity proofs"
+        },
+        {
+          "category": "S",
+          "description": "Execute live timed search algorithm implementations"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate integrity and professionalism under exam conditions"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Knowledge Representation: Propositional and First-Order Logic Inference",
+      "teaching_learning_activity": "Logical Inference Coding Workshop",
+      "assessment_task": "Knowledge Base Resolution Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate logical propositions, truth tables, and Horn clauses"
+        },
+        {
+          "category": "S",
+          "description": "Build simple rule-based inference engines and forward chaining"
+        },
+        {
+          "category": "A",
+          "description": "Value structured deductive reasoning in AI knowledge systems"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Supervised Learning: Linear Regression, Cost Functions, and Gradient Descent",
+      "teaching_learning_activity": "Linear Regression Lab from Scratch",
+      "assessment_task": "Gradient Descent Visualizer",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Derive Mean Squared Error (MSE) and partial derivative update rules"
+        },
+        {
+          "category": "S",
+          "description": "Code vector-based batch gradient descent in Python and NumPy"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate mathematical elegance in objective function minimization"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Logistic Regression and Binary Cross-Entropy Loss for Classification",
+      "teaching_learning_activity": "Logistic Classification Lab",
+      "assessment_task": "Sigmoid Decision Boundary Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain sigmoid activation, odds ratios, and log-loss mechanics"
+        },
+        {
+          "category": "S",
+          "description": "Implement logistic regression decision boundaries"
+        },
+        {
+          "category": "A",
+          "description": "Commit to thorough verification of false positive rates"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Optimization Algorithms: Stochastic Gradient Descent, Adam, and Learning Rates",
+      "teaching_learning_activity": "Optimizer Comparison Workshop",
+      "assessment_task": "Loss Convergence Benchmark",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast batch gradient descent with Adam adaptive momentum"
+        },
+        {
+          "category": "S",
+          "description": "Tune learning rate hyperparameters to avoid local minima traps"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit perseverance when troubleshooting non-converging loss"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Multi-Layer Perceptrons (MLP): Forward Propagation and Backpropagation",
+      "teaching_learning_activity": "Neural Network Coding Lab",
+      "assessment_task": "2-Layer Neural Net Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Formulate backpropagation chain rules for gradient calculation"
+        },
+        {
+          "category": "S",
+          "description": "Construct basic multi-layer perceptrons with ReLU activations"
+        },
+        {
+          "category": "A",
+          "description": "Value mathematical depth in artificial neural computation"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Optimization and Neural Network Theory Exam",
+      "teaching_learning_activity": "Formal Midterm Exam Session",
+      "assessment_task": "Midterm Practical Defense",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2,
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize gradient descent derivations and logical inference"
+        },
+        {
+          "category": "S",
+          "description": "Execute timed neural network training and validation tasks"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate mastery under timed evaluation"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "PyTorch Framework Foundations: Tensors, Autograd, and DataLoader Modules",
+      "teaching_learning_activity": "PyTorch Deep Learning Setup Lab",
+      "assessment_task": "PyTorch Training Loop Script",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain automatic differentiation and computational graph construction"
+        },
+        {
+          "category": "S",
+          "description": "Build modular PyTorch training, validation, and testing loops"
+        },
+        {
+          "category": "A",
+          "description": "Value modular engineering when structuring deep learning code"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Convolutional Neural Networks (CNN): Convolutions, Pooling, and Strides",
+      "teaching_learning_activity": "Image Processing and Filter Workshop",
+      "assessment_task": "Convolution Filter Output",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe feature map extraction, kernel weights, and max-pooling"
+        },
+        {
+          "category": "S",
+          "description": "Implement convolutional filter passes on image tensors"
+        },
+        {
+          "category": "A",
+          "description": "Display curiosity in computer vision spatial representations"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "CNN Architectures for Image Classification (LeNet, AlexNet, ResNet)",
+      "teaching_learning_activity": "Image Classification Lab with PyTorch",
+      "assessment_task": "Transfer Learning Classifier",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Analyze vanishing gradients and residual shortcut connections"
+        },
+        {
+          "category": "S",
+          "description": "Fine-tune pretrained ResNet backbones using transfer learning"
+        },
+        {
+          "category": "A",
+          "description": "Uphold scientific rigor when reporting classification metrics"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "Introduction to Natural Language Processing (NLP) and Recurrent Architectures",
+      "teaching_learning_activity": "Text Tokenization and Embedding Lab",
+      "assessment_task": "Sentiment Classification Model",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain word tokenization, vocabulary building, and embedding vectors"
+        },
+        {
+          "category": "S",
+          "description": "Train text classification models using LSTM or simple Transformers"
+        },
+        {
+          "category": "A",
+          "description": "Value linguistic nuances and context in language AI"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "AI Project Integration, Model Explainability, and Ethical Guidelines",
+      "teaching_learning_activity": "Capstone AI Engine Workshop",
+      "assessment_task": "Pre-Defense Integrated AI System",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Evaluate algorithmic bias, fairness, and model interpretability"
+        },
+        {
+          "category": "S",
+          "description": "Package intelligent AI models into accessible web applications"
+        },
+        {
+          "category": "A",
+          "description": "Practice constructive teamwork and peer code review"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Intelligent Agent Project Presentation",
+      "teaching_learning_activity": "Formal Capstone Project Defense",
+      "assessment_task": "Final Evaluation Score & Rubric",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize classical search, machine learning, and deep neural networks"
+        },
+        {
+          "category": "S",
+          "description": "Defend a fully functional AI application before a faculty panel"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate Perpetualite leadership, communication, and ethical virtue"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Hands-on PyTorch Labs & Algorithmic Tasks",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Theoretical Problem Sets",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

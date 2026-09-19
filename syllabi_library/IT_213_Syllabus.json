@@ -1,0 +1,539 @@
+{
+  "course_code": "IT 213",
+  "course_title": "Advanced Database Management Systems",
+  "course_description": "Advanced relational database engineering, 3NF and BCNF normalization, physical storage architectures, B+ tree indexing strategies, query execution optimization, ACID transaction guarantees, concurrency control, and NoSQL document databases.",
+  "credit_units": "3 Units (2 Units Lecture, 1 Unit Laboratory)",
+  "prerequisites": "IT 104",
+  "course_outcomes": [
+    {
+      "co_number": 1,
+      "bloom_level": "Applying",
+      "co_description": "Design normalized relational schemas achieving 3NF and BCNF to eliminate data redundancies.",
+      "mapped_po": [
+        1,
+        2
+      ]
+    },
+    {
+      "co_number": 2,
+      "bloom_level": "Analyzing",
+      "co_description": "Analyze complex SQL queries, execution plans, and B-Tree indexing strategies to optimize query performance.",
+      "mapped_po": [
+        2,
+        3
+      ]
+    },
+    {
+      "co_number": 3,
+      "bloom_level": "Evaluating",
+      "co_description": "Evaluate transaction management protocols, ACID guarantees, and concurrency control locking mechanisms.",
+      "mapped_po": [
+        3,
+        4
+      ]
+    },
+    {
+      "co_number": 4,
+      "bloom_level": "Applying",
+      "co_description": "Implement NoSQL document databases and distributed data pipelines for unstructured enterprise data.",
+      "mapped_po": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "co_number": 5,
+      "bloom_level": "Creating",
+      "co_description": "Architect an enterprise database system incorporating automated backups, replication, and role-based security.",
+      "mapped_po": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weekly_schedule": [
+    {
+      "week_number": 1,
+      "period": "Prelim",
+      "topic": "Relational Model Review, Relational Algebra, and DBMS Architecture",
+      "teaching_learning_activity": "Interactive Lecture and PostgreSQL/MySQL Setup",
+      "assessment_task": "DBMS Tooling Setup Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define relational algebra operators (select, project, join, union)"
+        },
+        {
+          "category": "S",
+          "description": "Configure enterprise DBMS instances and SQL query workbenches"
+        },
+        {
+          "category": "A",
+          "description": "Acknowledge the vital role of persistent storage in computing"
+        }
+      ]
+    },
+    {
+      "week_number": 2,
+      "period": "Prelim",
+      "topic": "Conceptual Design: Enhanced Entity-Relationship (EER) Modeling",
+      "teaching_learning_activity": "EER Modeling Workshop",
+      "assessment_task": "EER Diagram Specification",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Identify superclasses, subclasses, specialization, and generalization"
+        },
+        {
+          "category": "S",
+          "description": "Construct comprehensive EER diagrams for complex enterprise domains"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate precise conceptual abstractions before physical schema design"
+        }
+      ]
+    },
+    {
+      "week_number": 3,
+      "period": "Prelim",
+      "topic": "Functional Dependencies and Relational Normalization (1NF, 2NF, 3NF)",
+      "teaching_learning_activity": "Normalization Problem Solving Lab",
+      "assessment_task": "Schema Normalization Proof",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Define functional dependencies, candidate keys, and transitive dependencies"
+        },
+        {
+          "category": "S",
+          "description": "Decompose unnormalized data tables into 1NF, 2NF, and 3NF"
+        },
+        {
+          "category": "A",
+          "description": "Value mathematical rigor in eliminating update anomalies"
+        }
+      ]
+    },
+    {
+      "week_number": 4,
+      "period": "Prelim",
+      "topic": "Boyce-Codd Normal Form (BCNF) and Multi-Valued Dependencies (4NF)",
+      "teaching_learning_activity": "Advanced Normalization Workshop",
+      "assessment_task": "BCNF Decomposition Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate 3NF from BCNF and identify multi-valued dependencies"
+        },
+        {
+          "category": "S",
+          "description": "Perform lossless-join and dependency-preserving BCNF decompositions"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate precision when assessing non-trivial functional constraints"
+        }
+      ]
+    },
+    {
+      "week_number": 5,
+      "period": "Prelim",
+      "topic": "Advanced SQL: Window Functions, Common Table Expressions (CTEs), and Subqueries",
+      "teaching_learning_activity": "Advanced SQL Coding Session",
+      "assessment_task": "Complex Analytics Query Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain window partitions, ranking functions, and recursive CTEs"
+        },
+        {
+          "category": "S",
+          "description": "Write multi-table SQL queries leveraging CTEs and analytical partitions"
+        },
+        {
+          "category": "A",
+          "description": "Display diligence in formatting readable, modular SQL scripts"
+        }
+      ]
+    },
+    {
+      "week_number": 6,
+      "period": "Prelim",
+      "topic": "Preliminary Examination: EER Modeling and Advanced Normalization Exam",
+      "teaching_learning_activity": "Formal Prelim Written & Practical Exam",
+      "assessment_task": "Prelim Exam Rubric & Score",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Recall relational algebra equations and normalization theorems"
+        },
+        {
+          "category": "S",
+          "description": "Execute timed schema normalization and complex SQL query tasks"
+        },
+        {
+          "category": "A",
+          "description": "Exhibit academic integrity and professional composure under evaluation"
+        }
+      ]
+    },
+    {
+      "week_number": 7,
+      "period": "Midterm",
+      "topic": "Storage Architecture: File Organization, Page Slots, and Buffer Pools",
+      "teaching_learning_activity": "Storage Internals Workshop",
+      "assessment_task": "Buffer Management Simulation",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe slotted page architectures, free space maps, and LRU eviction"
+        },
+        {
+          "category": "S",
+          "description": "Calculate disk I/O overheads across differing buffer cache allocations"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate low-level hardware constraints in data storage"
+        }
+      ]
+    },
+    {
+      "week_number": 8,
+      "period": "Midterm",
+      "topic": "Index Structures: B-Tree and B+ Tree Fundamentals and Mechanics",
+      "teaching_learning_activity": "B+ Tree Calculation Workshop",
+      "assessment_task": "B+ Tree Node Traversal Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain search key distributions, fan-out, and split/merge mechanics"
+        },
+        {
+          "category": "S",
+          "description": "Trace index lookups, range scans, and node insertions in B+ trees"
+        },
+        {
+          "category": "A",
+          "description": "Value algorithmic logarithmic efficiency in data access"
+        }
+      ]
+    },
+    {
+      "week_number": 9,
+      "period": "Midterm",
+      "topic": "Query Processing: Parsing, Translation, and Relational Optimization",
+      "teaching_learning_activity": "Query Execution Plan Lab",
+      "assessment_task": "EXPLAIN Query Plan Analysis",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe cost estimation formulas for sequential scans versus index scans"
+        },
+        {
+          "category": "S",
+          "description": "Generate and interpret EXPLAIN ANALYZE execution plans in SQL"
+        },
+        {
+          "category": "A",
+          "description": "Strive for optimal query execution efficiency"
+        }
+      ]
+    },
+    {
+      "week_number": 10,
+      "period": "Midterm",
+      "topic": "Index Tuning Strategies: Clustered vs Non-Clustered and Covering Indexes",
+      "teaching_learning_activity": "Database Index Tuning Workshop",
+      "assessment_task": "Query Acceleration Benchmark",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Differentiate clustered primary indexes from secondary covering indexes"
+        },
+        {
+          "category": "S",
+          "description": "Create targeted composite indexes that eliminate table lookups"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate prudence in managing index write-penalty overheads"
+        }
+      ]
+    },
+    {
+      "week_number": 11,
+      "period": "Midterm",
+      "topic": "Stored Procedures, User-Defined Functions, and Automated Triggers",
+      "teaching_learning_activity": "Database Programmability Lab",
+      "assessment_task": "Audit Trigger Implementation",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain PL/SQL block structures, cursor loops, and event triggers"
+        },
+        {
+          "category": "S",
+          "description": "Program database triggers enforcing automated auditing and data integrity"
+        },
+        {
+          "category": "A",
+          "description": "Commit to defensive validation at the database layer"
+        }
+      ]
+    },
+    {
+      "week_number": 12,
+      "period": "Midterm",
+      "topic": "Midterm Examination: Query Tuning and Index Optimization Practical Exam",
+      "teaching_learning_activity": "Formal Midterm Practical Exam",
+      "assessment_task": "Midterm Practical Submission & Rubric",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize index architecture, execution plans, and PL/SQL triggers"
+        },
+        {
+          "category": "S",
+          "description": "Profile and optimize poorly performing queries under timed inspection"
+        },
+        {
+          "category": "A",
+          "description": "Demonstrate technical competence under formal assessment"
+        }
+      ]
+    },
+    {
+      "week_number": 13,
+      "period": "Final",
+      "topic": "Transaction Processing: ACID Properties and Concurrency Anomalies",
+      "teaching_learning_activity": "Transaction Anomaly Simulation Lab",
+      "assessment_task": "ACID Anomaly Verification Sheet",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Explain dirty reads, non-repeatable reads, phantom reads, and atomicity"
+        },
+        {
+          "category": "S",
+          "description": "Simulate concurrent transaction conflicts using multi-session terminals"
+        },
+        {
+          "category": "A",
+          "description": "Recognize the severe financial impact of transactional data corruption"
+        }
+      ]
+    },
+    {
+      "week_number": 14,
+      "period": "Final",
+      "topic": "Concurrency Control: Two-Phase Locking (2PL), Deadlocks, and Isolation Levels",
+      "teaching_learning_activity": "Locking and Deadlock Workshop",
+      "assessment_task": "Deadlock Detection Task",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast Read Committed, Repeatable Read, and Serializable isolations"
+        },
+        {
+          "category": "S",
+          "description": "Resolve deadlock cycles using wait-for graphs and timeout configurations"
+        },
+        {
+          "category": "A",
+          "description": "Value data consistency over raw concurrent throughput"
+        }
+      ]
+    },
+    {
+      "week_number": 15,
+      "period": "Final",
+      "topic": "Database Recovery Protocols: Write-Ahead Logging (WAL) and Checkpointing",
+      "teaching_learning_activity": "Recovery Protocol Simulation Lab",
+      "assessment_task": "ARIES Recovery Trace Report",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        3
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Describe the ARIES recovery algorithm (Analysis, Redo, Undo phases)"
+        },
+        {
+          "category": "S",
+          "description": "Trace WAL log sequences to recover consistent database states"
+        },
+        {
+          "category": "A",
+          "description": "Emphasize disaster preparedness and fault tolerance in systems"
+        }
+      ]
+    },
+    {
+      "week_number": 16,
+      "period": "Final",
+      "topic": "NoSQL Document Databases: MongoDB Schema Design and Aggregation Pipelines",
+      "teaching_learning_activity": "MongoDB Querying Workshop",
+      "assessment_task": "NoSQL Aggregation Pipeline",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Contrast relational table models with flexible BSON document collections"
+        },
+        {
+          "category": "S",
+          "description": "Write multi-stage aggregation pipelines for nested document filtering"
+        },
+        {
+          "category": "A",
+          "description": "Appreciate scalability trade-offs in distributed data models"
+        }
+      ]
+    },
+    {
+      "week_number": 17,
+      "period": "Final",
+      "topic": "Database Security, Role-Based Access Control (RBAC), and Replication",
+      "teaching_learning_activity": "Security Hardening Workshop",
+      "assessment_task": "Hardened Database Deployment",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Outline column-level privileges, encryption at rest, and replica sets"
+        },
+        {
+          "category": "S",
+          "description": "Configure role-based access control and read-replica failovers"
+        },
+        {
+          "category": "A",
+          "description": "Practice constructive team coordination during enterprise setup"
+        }
+      ]
+    },
+    {
+      "week_number": 18,
+      "period": "Final",
+      "topic": "Final Examination & Capstone Defense: Enterprise Database Architecture Showcase",
+      "teaching_learning_activity": "Formal Capstone Defense Session",
+      "assessment_task": "Final Evaluation & Rubric",
+      "result_evidence": "Lab Portfolio / Technical Output",
+      "aligned_co": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lesson_outcomes": [
+        {
+          "category": "K",
+          "description": "Synthesize normalization, index tuning, transaction recovery, and NoSQL"
+        },
+        {
+          "category": "S",
+          "description": "Present and defend an enterprise database solution before evaluators"
+        },
+        {
+          "category": "A",
+          "description": "Exemplify Perpetualite leadership and professional presentation ethics"
+        }
+      ]
+    }
+  ],
+  "grading_breakdown": [
+    {
+      "assessment_task": "Advanced SQL & Database Tuning Labs",
+      "percentage_weight": 40.0
+    },
+    {
+      "assessment_task": "Quizzes & Theoretical Problem Sets",
+      "percentage_weight": 20.0
+    },
+    {
+      "assessment_task": "Preliminary Examination",
+      "percentage_weight": 10.0
+    },
+    {
+      "assessment_task": "Midterm Examination",
+      "percentage_weight": 15.0
+    },
+    {
+      "assessment_task": "Final Examination & Database Capstone Defense",
+      "percentage_weight": 15.0
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+name: UPHSD OBE Syllabus Generator CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run 6-Point Automated QA Test Suite
+      run: |
+        python test_system.py
+
+    - name: Generate Official Word Presentation Script
+      run: |
+        python create_presentation_script_docx.py
+
+    - name: Verify All 9 Syllabi Compile to HTML
+      run: |
+        python -c "
+        import db_manager, export_engine
+        db_manager.init_db()
+        db_manager.batch_ingest_directory('syllabi_library')
+        courses = db_manager.list_courses()
+        print(f'Total courses in database: {len(courses)}')
+        assert len(courses) >= 8, 'Expected at least 8 courses in database'
+        for c in courses:
+            p = export_engine.export_syllabus_html(c['course_code'], auto_open=False)
+            print(f'Compiled: {p}')
+        "
+
+    - name: Upload Exported HTML Syllabi Artifacts
+      uses: actions/upload-artifact@v4
+      if: matrix.python-version == '3.11'
+      with:
+        name: official-uphsd-syllabi-html
+        path: exports/*.html
