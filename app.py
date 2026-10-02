@@ -274,6 +274,15 @@ selected_sy = f"{sy_start.strip()} - {sy_end.strip()}"
 st.title("Outcome-Based Education (OBE) Syllabus Generator")
 st.markdown("**University of Perpetual Help System DALTA — Academic Quality Assurance**")
 
+# Top Overview Ribbon (Suggestion 1)
+if st.session_state.current_syllabus:
+    s_curr = st.session_state.current_syllabus
+    st.info(
+        f"📘 **Active Syllabus:** `{s_curr.course_code}: {s_curr.course_title}`  |  "
+        f"👨‍🏫 **Faculty Lead:** **{selected_prof}**  |  "
+        f"🗓️ **Term:** {selected_term} (SY {selected_sy}, Year Level {selected_year})"
+    )
+
 # ---------------------------------------------------------------------------
 # 5. Core Operational Tabs
 # ---------------------------------------------------------------------------
@@ -325,7 +334,7 @@ with tab1:
             def st_progress(count: int, chunk: str):
                 if stop_evt.is_set():
                     raise InterruptedError("Generation stopped by user.")
-                progress_box.caption(f"⚡ Streaming live tokens from Ollama... {count:,} tokens produced")
+                progress_box.caption(f"⚡ Streaming live tokens from Ollama ({model_choice})... {count:,} tokens produced | Faculty: {selected_prof} | Term: {selected_term} (SY {selected_sy})")
 
             try:
                 generated = llm_engine.generate_syllabus_data(
@@ -381,6 +390,19 @@ with tab1:
         c2.metric("Total Outcomes (CLOs)", len(s.course_outcomes))
         c3.metric("Schedule Length", f"{len(s.weekly_schedule)} Weeks")
         c4.metric("Grading Total", f"{sum(g.percentage_weight for g in s.grading_breakdown):.1f}%")
+
+        # Suggestion 3: Course Overview & Faculty Info Card
+        with st.expander("ℹ️ Course Overview & Faculty Info (Curriculum Metadata)", expanded=True):
+            ci1, ci2 = st.columns(2)
+            with ci1:
+                st.markdown(f"**Course Title:** {s.course_title}")
+                st.markdown(f"**Credit Units:** {s.credit_units}")
+                st.markdown(f"**Prerequisite(s):** {s.prerequisites or 'None'}")
+            with ci2:
+                st.markdown(f"**Assigned Faculty Lead:** :red[**{selected_prof}**]")
+                st.markdown(f"**Academic Period:** {selected_term} | SY {selected_sy} (Year Level {selected_year})")
+                st.markdown(f"**Curriculum Structure:** {len(s.course_outcomes)} Bloom CLOs | 18 Instructional Weeks")
+            st.markdown(f"**Catalog Description:** {s.course_description}")
 
         st.markdown("#### Quality Assurance Compliance Checks")
         col_chk1, col_chk2, col_chk3 = st.columns(3)
@@ -506,6 +528,23 @@ with tab3:
         selected_code = st.selectbox("Inspect Course Records", options=[c["course_code"] for c in courses])
         if selected_code:
             relational_data = db_manager.get_course_by_code(selected_code)
+
+            # Selected Course Metadata & Faculty Inspector (Suggestion 2)
+            st.markdown(
+                f"""
+                <div style="background-color: #FFFBEB; border: 1px solid #FCD34D; border-left: 5px solid #D97706; padding: 12px 16px; border-radius: 6px; margin-bottom: 14px;">
+                    <div style="font-weight: bold; color: #92400E; font-size: 1.05rem;">🔍 Course Metadata & Faculty Inspector: {relational_data['course_code']} — {relational_data['course_title']}</div>
+                    <div style="color: #374151; font-size: 0.9rem; margin-top: 5px;">
+                        <b>👨‍🏫 Assigned Faculty Lead:</b> {selected_prof} &nbsp;|&nbsp; 
+                        <b>🗓️ Academic Period:</b> {selected_term}, SY {selected_sy} (Year Level {selected_year})<br>
+                        <b>Credit Units:</b> {relational_data.get('credit_units', 'N/A')} &nbsp;|&nbsp; 
+                        <b>Prerequisites:</b> {relational_data.get('prerequisites', 'None')}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
             t_clo, t_weeks, t_grade = st.tabs(["Course Outcomes Table", "Weekly Schedule & LLOs Table", "Grading Components Table"])
 
             with t_clo:

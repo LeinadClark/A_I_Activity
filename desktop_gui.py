@@ -417,6 +417,13 @@ class OBESyllabusDesktopApp(tk.Tk):
         self.lbl_custom_prof = tk.Label(field_frame, text="Prof Name:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD)
         self.ent_custom_prof = ttk.Entry(field_frame, font=("Segoe UI", 9))
 
+        # Real-time event bindings for live UI synchronization
+        self.cmb_term.bind("<<ComboboxSelected>>", self._update_ribbon_metadata)
+        self.cmb_year.bind("<<ComboboxSelected>>", self._update_ribbon_metadata)
+        self.ent_sy_start.bind("<KeyRelease>", self._update_ribbon_metadata)
+        self.ent_sy_end.bind("<KeyRelease>", self._update_ribbon_metadata)
+        self.ent_custom_prof.bind("<KeyRelease>", self._update_ribbon_metadata)
+
         field_frame.columnconfigure(1, weight=1)
 
         tk.Label(left_card, text="Course Catalog Description:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD).pack(anchor="w", padx=16, pady=(8, 2))
@@ -473,18 +480,30 @@ class OBESyllabusDesktopApp(tk.Tk):
         right_card = tk.Frame(paned, bg=COLOR_CARD, bd=1, relief=tk.SOLID, highlightbackground=COLOR_BORDER)
         paned.add(right_card, minsize=540)
 
-        # Overview Metrics Ribbon
+        # Overview Metrics Ribbon (Suggestion 1)
         self.frame_metrics = tk.Frame(right_card, bg=COLOR_HIGHLIGHT, bd=1, relief=tk.SOLID)
         self.frame_metrics.pack(fill=tk.X, padx=14, pady=10)
 
+        meta_left_container = tk.Frame(self.frame_metrics, bg=COLOR_HIGHLIGHT)
+        meta_left_container.pack(side=tk.LEFT, padx=12, pady=6)
+
         self.lbl_active_course = tk.Label(
-            self.frame_metrics,
+            meta_left_container,
             text="Active Syllabus: No Course Loaded",
             font=("Segoe UI Bold", 10),
             bg=COLOR_HIGHLIGHT,
             fg=COLOR_MAROON
         )
-        self.lbl_active_course.pack(side=tk.LEFT, padx=12, pady=8)
+        self.lbl_active_course.pack(anchor="w")
+
+        self.lbl_active_meta = tk.Label(
+            meta_left_container,
+            text="👨‍🏫 Faculty Lead: None  |  🗓️ Term: None  |  SY: None",
+            font=("Segoe UI Semibold", 8),
+            bg=COLOR_HIGHLIGHT,
+            fg="#4B5563"
+        )
+        self.lbl_active_meta.pack(anchor="w")
 
         self.lbl_stats = tk.Label(
             self.frame_metrics,
@@ -604,6 +623,118 @@ class OBESyllabusDesktopApp(tk.Tk):
         )
         self.lbl_week_ksa.pack(fill=tk.X, padx=12, pady=6)
 
+        # SUB-TAB 3: Course Overview & Faculty Info (Suggestion 3)
+        tab_info = tk.Frame(sub_nb, bg=COLOR_CARD)
+        sub_nb.add(tab_info, text="ℹ️ Course Overview & Faculty Info")
+
+        info_scroll_frame = tk.Frame(tab_info, bg=COLOR_CARD)
+        info_scroll_frame.pack(fill=tk.BOTH, expand=True, padx=14, pady=10)
+
+        # Card 1: Course & Institutional Identification
+        grp_course = tk.LabelFrame(
+            info_scroll_frame,
+            text=" 📘 Institutional & Course Identification ",
+            font=("Segoe UI Semibold", 9),
+            bg=COLOR_CARD,
+            fg=COLOR_MAROON,
+            bd=1,
+            relief=tk.SOLID
+        )
+        grp_course.pack(fill=tk.X, pady=(0, 6))
+
+        row_c1 = tk.Frame(grp_course, bg=COLOR_CARD)
+        row_c1.pack(fill=tk.X, padx=10, pady=3)
+        tk.Label(row_c1, text="Course Title:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_title = tk.Label(row_c1, text="No Course Loaded", font=("Segoe UI Bold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_title.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        row_c2 = tk.Frame(grp_course, bg=COLOR_CARD)
+        row_c2.pack(fill=tk.X, padx=10, pady=3)
+        tk.Label(row_c2, text="Credit Units:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_units = tk.Label(row_c2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_units.pack(side=tk.LEFT, padx=(0, 20))
+        tk.Label(row_c2, text="Prerequisite(s):", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_prereq = tk.Label(row_c2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_prereq.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        # Card 2: Faculty Leadership & Academic Period
+        grp_faculty = tk.LabelFrame(
+            info_scroll_frame,
+            text=" 👨‍🏫 Faculty Leadership & Academic Period ",
+            font=("Segoe UI Semibold", 9),
+            bg=COLOR_CARD,
+            fg=COLOR_MAROON,
+            bd=1,
+            relief=tk.SOLID
+        )
+        grp_faculty.pack(fill=tk.X, pady=(0, 6))
+
+        row_f1 = tk.Frame(grp_faculty, bg=COLOR_CARD)
+        row_f1.pack(fill=tk.X, padx=10, pady=3)
+        tk.Label(row_f1, text="Faculty Lead:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_faculty = tk.Label(row_f1, text="—", font=("Segoe UI Bold", 9), bg=COLOR_CARD, fg=COLOR_MAROON)
+        self.lbl_ov_faculty.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        row_f2 = tk.Frame(grp_faculty, bg=COLOR_CARD)
+        row_f2.pack(fill=tk.X, padx=10, pady=3)
+        tk.Label(row_f2, text="Academic Term:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_term = tk.Label(row_f2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_term.pack(side=tk.LEFT, padx=(0, 20))
+
+        tk.Label(row_f2, text="School Year:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=12, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_sy = tk.Label(row_f2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_sy.pack(side=tk.LEFT, padx=(0, 20))
+
+        tk.Label(row_f2, text="Year Level:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=10, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_year = tk.Label(row_f2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_year.pack(side=tk.LEFT)
+
+        # Card 3: Catalog Description
+        grp_desc = tk.LabelFrame(
+            info_scroll_frame,
+            text=" 📝 Course Catalog Description ",
+            font=("Segoe UI Semibold", 9),
+            bg=COLOR_CARD,
+            fg=COLOR_MAROON,
+            bd=1,
+            relief=tk.SOLID
+        )
+        grp_desc.pack(fill=tk.BOTH, expand=True, pady=(0, 6))
+
+        self.txt_ov_desc = scrolledtext.ScrolledText(grp_desc, height=4, font=("Segoe UI", 9), relief=tk.FLAT, wrap=tk.WORD)
+        self.txt_ov_desc.pack(fill=tk.BOTH, expand=True, padx=8, pady=4)
+        self.txt_ov_desc.config(state="disabled")
+
+        # Card 4: Curricular Structure & Compliance
+        grp_struct = tk.LabelFrame(
+            info_scroll_frame,
+            text=" 📊 OBE Curriculum Metrics & Grading Breakdown ",
+            font=("Segoe UI Semibold", 9),
+            bg=COLOR_CARD,
+            fg=COLOR_MAROON,
+            bd=1,
+            relief=tk.SOLID
+        )
+        grp_struct.pack(fill=tk.X, pady=(0, 2))
+
+        row_s1 = tk.Frame(grp_struct, bg=COLOR_CARD)
+        row_s1.pack(fill=tk.X, padx=10, pady=2)
+        tk.Label(row_s1, text="OBE CLOs:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_clos_summary = tk.Label(row_s1, text="0 Outcomes", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_clos_summary.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        row_s2 = tk.Frame(grp_struct, bg=COLOR_CARD)
+        row_s2.pack(fill=tk.X, padx=10, pady=2)
+        tk.Label(row_s2, text="Term Matrix:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_weeks_summary = tk.Label(row_s2, text="18 Instructional Weeks (W6 Prelim, W12 Midterm, W18 Final)", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_weeks_summary.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        row_s3 = tk.Frame(grp_struct, bg=COLOR_CARD)
+        row_s3.pack(fill=tk.X, padx=10, pady=2)
+        tk.Label(row_s3, text="Grading Weights:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
+        self.lbl_ov_grading_summary = tk.Label(row_s3, text="Lecture 50% | Laboratory 20% | Major Examinations 30%", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
+        self.lbl_ov_grading_summary.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
         # ACTION TOOLBAR
         toolbar = tk.Frame(right_card, bg=COLOR_CARD)
         toolbar.pack(fill=tk.X, padx=14, pady=(6, 12))
@@ -654,31 +785,90 @@ class OBESyllabusDesktopApp(tk.Tk):
         btn_import_json = ttk.Button(frame_top, text="📥 Ingest External JSON", command=self._import_json_to_db)
         btn_import_json.pack(side=tk.RIGHT, padx=4)
 
-        # Table of Courses
+        # Table of Courses (Suggestion 2: Includes Assigned Faculty Column)
         frame_tbl = tk.Frame(self.tab_database, bg=COLOR_CARD, bd=1, relief=tk.SOLID)
         frame_tbl.pack(fill=tk.BOTH, expand=True, padx=16, pady=(0, 10))
 
-        db_cols = ("code", "title", "units", "clos", "weeks", "updated")
+        db_cols = ("code", "title", "units", "faculty", "clos", "weeks", "updated")
         self.tree_db = ttk.Treeview(frame_tbl, columns=db_cols, show="headings", selectmode="browse")
         self.tree_db.heading("code", text="Course Code")
         self.tree_db.heading("title", text="Course Title")
         self.tree_db.heading("units", text="Credit Units")
-        self.tree_db.heading("clos", text="Total CLOs")
-        self.tree_db.heading("weeks", text="Total Weeks")
+        self.tree_db.heading("faculty", text="Assigned Faculty")
+        self.tree_db.heading("clos", text="CLOs")
+        self.tree_db.heading("weeks", text="Weeks")
         self.tree_db.heading("updated", text="Last Updated")
 
-        self.tree_db.column("code", width=110, anchor="center")
-        self.tree_db.column("title", width=340, anchor="w")
-        self.tree_db.column("units", width=180, anchor="center")
-        self.tree_db.column("clos", width=90, anchor="center")
-        self.tree_db.column("weeks", width=90, anchor="center")
-        self.tree_db.column("updated", width=160, anchor="center")
+        self.tree_db.column("code", width=95, anchor="center")
+        self.tree_db.column("title", width=270, anchor="w")
+        self.tree_db.column("units", width=140, anchor="center")
+        self.tree_db.column("faculty", width=170, anchor="w")
+        self.tree_db.column("clos", width=65, anchor="center")
+        self.tree_db.column("weeks", width=65, anchor="center")
+        self.tree_db.column("updated", width=130, anchor="center")
 
         sb_db = ttk.Scrollbar(frame_tbl, orient="vertical", command=self.tree_db.yview)
         self.tree_db.configure(yscrollcommand=sb_db.set)
         self.tree_db.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         sb_db.pack(side=tk.RIGHT, fill=tk.Y)
+        self.tree_db.bind("<<TreeviewSelect>>", self._on_db_course_select)
         self.tree_db.bind("<Double-1>", lambda e: self._load_selected_course_to_editor())
+
+        # Selected Course Metadata & Faculty Inspector Card (Suggestion 2)
+        self.frame_db_inspector = tk.LabelFrame(
+            self.tab_database,
+            text=" 🔍 Selected Course Metadata & Faculty Inspector ",
+            font=("Segoe UI Semibold", 9),
+            bg=COLOR_CARD,
+            fg=COLOR_MAROON,
+            bd=1,
+            relief=tk.SOLID
+        )
+        self.frame_db_inspector.pack(fill=tk.X, padx=16, pady=(0, 10))
+
+        row_i1 = tk.Frame(self.frame_db_inspector, bg=COLOR_CARD)
+        row_i1.pack(fill=tk.X, padx=10, pady=(4, 2))
+        self.lbl_insp_title = tk.Label(
+            row_i1,
+            text="📘 Course: Click any course row in the table above to view full curriculum metadata",
+            font=("Segoe UI Bold", 9),
+            bg=COLOR_CARD,
+            fg=COLOR_MAROON
+        )
+        self.lbl_insp_title.pack(side=tk.LEFT)
+
+        self.lbl_insp_units = tk.Label(
+            row_i1,
+            text="Credits: —  |  Prereq: —",
+            font=("Segoe UI", 8),
+            bg=COLOR_CARD,
+            fg=COLOR_TEXT_MUTED
+        )
+        self.lbl_insp_units.pack(side=tk.RIGHT)
+
+        row_i2 = tk.Frame(self.frame_db_inspector, bg=COLOR_CARD)
+        row_i2.pack(fill=tk.X, padx=10, pady=2)
+        self.lbl_insp_faculty = tk.Label(
+            row_i2,
+            text="👨‍🏫 Faculty Lead: (Active Selection: MALITAO, ROBERTO L.)  |  🗓️ Term: 1st Semester, SY 2026 - 2027 (Year Level 3)",
+            font=("Segoe UI Semibold", 9),
+            bg=COLOR_CARD,
+            fg="#1E293B"
+        )
+        self.lbl_insp_faculty.pack(side=tk.LEFT)
+
+        row_i3 = tk.Frame(self.frame_db_inspector, bg=COLOR_CARD)
+        row_i3.pack(fill=tk.X, padx=10, pady=(2, 6))
+        self.lbl_insp_desc = tk.Label(
+            row_i3,
+            text="Description: Select a course above to inspect catalog description and institutional parameters.",
+            font=("Segoe UI", 8),
+            bg=COLOR_CARD,
+            fg="#475569",
+            justify=tk.LEFT,
+            wraplength=980
+        )
+        self.lbl_insp_desc.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
         # Bottom Actions
         bar_act = tk.Frame(self.tab_database, bg=COLOR_BG)
@@ -769,6 +959,66 @@ class OBESyllabusDesktopApp(tk.Tk):
         else:
             self.lbl_custom_prof.grid_remove()
             self.ent_custom_prof.grid_remove()
+        self._update_ribbon_metadata()
+
+    def _update_ribbon_metadata(self, event=None):
+        prof = self.get_selected_professor()
+        term = self.get_selected_term()
+        sy = self.get_selected_school_year()
+        year_lvl = self.get_selected_year_level()
+        if hasattr(self, 'lbl_active_meta'):
+            self.lbl_active_meta.config(text=f"👨‍🏫 Faculty: {prof}  |  🗓️ {term}, SY {sy} (Year {year_lvl})")
+        if hasattr(self, '_update_overview_tab'):
+            self._update_overview_tab()
+
+    def _update_overview_tab(self):
+        if not hasattr(self, 'lbl_ov_title'):
+            return
+        prof = self.get_selected_professor()
+        term = self.get_selected_term()
+        sy = self.get_selected_school_year()
+        year_lvl = self.get_selected_year_level()
+
+        self.lbl_ov_faculty.config(text=prof)
+        self.lbl_ov_term.config(text=term)
+        self.lbl_ov_sy.config(text=f"SY {sy}")
+        self.lbl_ov_year.config(text=f"Year Level {year_lvl}")
+
+        s = self.current_syllabus
+        if s:
+            self.lbl_ov_title.config(text=f"{s.course_code}: {s.course_title}")
+            self.lbl_ov_units.config(text=s.credit_units)
+            self.lbl_ov_prereq.config(text=s.prerequisites or "None")
+            self.txt_ov_desc.config(state="normal")
+            self.txt_ov_desc.delete("1.0", tk.END)
+            self.txt_ov_desc.insert("1.0", s.course_description)
+            self.txt_ov_desc.config(state="disabled")
+            self.lbl_ov_clos_summary.config(text=f"{len(s.course_outcomes)} Outcomes (Bloom's Taxonomy Compliant, Mapped to POs)")
+            self.lbl_ov_weeks_summary.config(text=f"{len(s.weekly_schedule)} Weeks (Prelim: W1-6, Midterm: W7-12, Final: W13-18)")
+            grading_str = " | ".join([f"{g.assessment_task}: {g.percentage_weight:.0f}%" for g in s.grading_breakdown])
+            self.lbl_ov_grading_summary.config(text=grading_str)
+
+    def _on_db_course_select(self, event=None):
+        selected = self.tree_db.selection()
+        if not selected:
+            return
+        vals = self.tree_db.item(selected[0], "values")
+        if not vals:
+            return
+        c_code = vals[0]
+        data = db_manager.get_course_by_code(c_code, db_path=self.db_path)
+        if data:
+            self.lbl_insp_title.config(text=f"📘 Course: {data.get('course_code')} — {data.get('course_title')}")
+            self.lbl_insp_units.config(text=f"Credits: {data.get('credit_units', 'N/A')}  |  Prereq: {data.get('prerequisites', 'None')}")
+            prof = self.get_selected_professor()
+            term = self.get_selected_term()
+            sy = self.get_selected_school_year()
+            yr = self.get_selected_year_level()
+            self.lbl_insp_faculty.config(text=f"👨‍🏫 Faculty Lead: {prof}  |  🗓️ Term: {term}, SY {sy} (Year Level {yr})")
+            desc = data.get('course_description', '')
+            if len(desc) > 220:
+                desc = desc[:217] + "..."
+            self.lbl_insp_desc.config(text=f"Description: {desc}")
 
     def get_selected_professor(self) -> str:
         val = self.cmb_prof.get()
@@ -840,6 +1090,11 @@ class OBESyllabusDesktopApp(tk.Tk):
         if not c_desc:
             c_desc = f"Comprehensive study of foundational principles and practical applications of {c_title}."
 
+        prof = self.get_selected_professor()
+        term = self.get_selected_term()
+        sy = self.get_selected_school_year()
+        year_lvl = self.get_selected_year_level()
+
         self.stop_event = threading.Event()
         self.btn_generate.config(state="disabled")
         self.btn_stop.config(state="normal")
@@ -848,6 +1103,9 @@ class OBESyllabusDesktopApp(tk.Tk):
         self.txt_log.delete("1.0", tk.END)
         self._log(f"[START] Live generation initiated for {c_code}: {c_title}")
         self._log(f"[CONFIG] Model: {model_name} | Streaming: Enabled")
+        self._log(f"[FACULTY] Assigned Faculty Lead: {prof}")
+        self._log(f"[TERM] Academic Period: {term} | SY {sy} (Year Level {year_lvl})")
+        self._log(f"[COURSE] Units: {c_units} | Prerequisites: {c_prereq}")
 
         def worker():
             t0 = time.time()
@@ -889,6 +1147,7 @@ class OBESyllabusDesktopApp(tk.Tk):
                         fg=COLOR_SUCCESS
                     )
                     self._log(f"[SUCCESS] Pydantic Schema Validation Passed ({elapsed:.2f}s)!")
+                    self._log(f"[FACULTY INFO] Faculty Lead: {prof} | Period: {term} (SY {sy})")
                     self._log(f"[STATS] Generated {len(syllabus.course_outcomes)} CLOs and {len(syllabus.weekly_schedule)} Weeks.")
                     self._render_active_syllabus(syllabus)
                     self._load_database_courses()
@@ -925,7 +1184,13 @@ class OBESyllabusDesktopApp(tk.Tk):
         threading.Thread(target=worker, daemon=True).start()
 
     def _render_active_syllabus(self, s: obe_schemas.CourseMetadataSchema):
+        prof = self.get_selected_professor()
+        term = self.get_selected_term()
+        sy = self.get_selected_school_year()
+        year_lvl = self.get_selected_year_level()
+
         self.lbl_active_course.config(text=f"Active Syllabus: {s.course_code} - {s.course_title}")
+        self.lbl_active_meta.config(text=f"👨‍🏫 Faculty: {prof}  |  🗓️ {term}, SY {sy} (Year {year_lvl})")
         total_w = sum(g.percentage_weight for g in s.grading_breakdown)
         self.lbl_stats.config(text=f"CLOs: {len(s.course_outcomes)} | Weeks: {len(s.weekly_schedule)} | Grading: {total_w:.0f}%")
 
@@ -952,6 +1217,9 @@ class OBESyllabusDesktopApp(tk.Tk):
                 w.assessment_task,
                 str(w.aligned_co)
             ))
+
+        # 3. Update Sub-Tab 3: Course Overview & Faculty Info (Suggestion 3)
+        self._update_overview_tab()
 
     def _on_clo_select(self, event=None):
         selected = self.tree_clo.selection()
@@ -1031,6 +1299,8 @@ class OBESyllabusDesktopApp(tk.Tk):
             return
         cid = db_manager.ingest_syllabus(self.current_syllabus, db_path=self.db_path)
         self._load_database_courses()
+        self._log(f"[PERSIST] Saved '{self.current_syllabus.course_code}' to SQLite repository (ID: {cid}).")
+        self._log(f"[METADATA] Associated Faculty: {self.get_selected_professor()} | Period: {self.get_selected_term()}")
         messagebox.showinfo("Saved", f"Syllabus '{self.current_syllabus.course_code}' persisted into SQLite (Course ID: {cid})!")
 
     def _export_and_open_html(self):
@@ -1039,18 +1309,23 @@ class OBESyllabusDesktopApp(tk.Tk):
             return
         # Ensure latest data in DB
         db_manager.ingest_syllabus(self.current_syllabus, db_path=self.db_path)
+        prof = self.get_selected_professor()
+        term = self.get_selected_term()
+        sy = self.get_selected_school_year()
+        yr = self.get_selected_year_level()
         html_path = export_engine.export_syllabus_html(
             self.current_syllabus.course_code,
             db_path=self.db_path,
             auto_open=False,
-            professor=self.get_selected_professor(),
-            term=self.get_selected_term(),
-            school_year=self.get_selected_school_year(),
-            year_level=self.get_selected_year_level()
+            professor=prof,
+            term=term,
+            school_year=sy,
+            year_level=yr
         )
         self.last_exported_html = html_path
         abs_p = os.path.abspath(html_path)
         self._log(f"[EXPORT] Compiled official HTML syllabus: {abs_p}")
+        self._log(f"[EXPORT METADATA] Faculty: {prof} | Term: {term} (SY {sy}, Year {yr})")
         webbrowser.open(f"file://{abs_p}")
 
     def _export_json_file(self):
@@ -1072,17 +1347,19 @@ class OBESyllabusDesktopApp(tk.Tk):
             self.tree_db.delete(item)
         try:
             courses = db_manager.list_courses(self.db_path)
+            prof = self.get_selected_professor()
             for c in courses:
                 self.tree_db.insert("", tk.END, values=(
                     c["course_code"],
                     c["course_title"],
                     c["credit_units"],
+                    prof,
                     c["outcome_count"],
                     c["week_count"],
                     c.get("created_at") or c.get("updated_at", "Recently")
                 ))
             if hasattr(self, "lbl_db_count"):
-                self.lbl_db_count.config(text=f"Total Courses Stored: {len(courses)} (Double-click any row to view in Editor)")
+                self.lbl_db_count.config(text=f"Total Courses Stored: {len(courses)} (Click row to inspect metadata, double-click to load)")
             self._log(f"[DATABASE] Loaded {len(courses)} courses from SQLite repository.")
         except Exception as e:
             if hasattr(self, "lbl_db_count"):
@@ -1127,6 +1404,11 @@ class OBESyllabusDesktopApp(tk.Tk):
                 self.txt_desc.delete("1.0", tk.END)
                 self.txt_desc.insert("1.0", s.course_description)
                 self.notebook.select(0)
+                prof = self.get_selected_professor()
+                term = self.get_selected_term()
+                sy = self.get_selected_school_year()
+                self._log(f"[LOAD] Loaded syllabus '{s.course_code}: {s.course_title}' into active editor.")
+                self._log(f"[FACULTY] Assigned Faculty Lead: {prof} | Academic Period: {term} (SY {sy})")
                 messagebox.showinfo("Loaded", f"Loaded '{s.course_code}' into the editor!")
             except Exception as err:
                 messagebox.showerror("Error", f"Failed to parse course: {err}")
