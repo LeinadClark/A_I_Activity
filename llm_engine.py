@@ -653,7 +653,8 @@ def generate_syllabus_data(
     model_name: str = DEFAULT_MODEL,
     allow_fallback: bool = True,
     progress_callback: Optional[Callable[[int, str], None]] = None,
-    stream: bool = False
+    stream: bool = False,
+    stop_event: Optional[Any] = None
 ) -> CourseMetadataSchema:
     """
     Queries local Ollama (Qwen 2.5) with strict JSON formatting and automated retry loop.
@@ -685,6 +686,10 @@ def generate_syllabus_data(
     use_stream = stream or (progress_callback is not None)
 
     for attempt in range(1, max_retries + 1):
+        if stop_event and getattr(stop_event, "is_set", lambda: False)():
+            print("[LLM Engine] Generation stopped by user before attempt.")
+            raise InterruptedError("Generation stopped by user.")
+
         print(f"\n[LLM Engine] Querying Ollama '{model_name}' (Attempt {attempt}/{max_retries})...")
         payload = {
             "model": model_name,
@@ -706,6 +711,13 @@ def generate_syllabus_data(
                 chunks = []
                 token_count = 0
                 for line in response.iter_lines():
+                    if stop_event and getattr(stop_event, "is_set", lambda: False)():
+                        print("[LLM Engine] Generation stopped by user during streaming.")
+                        try:
+                            response.close()
+                        except Exception:
+                            pass
+                        raise InterruptedError("Generation stopped by user.")
                     if line:
                         try:
                             chunk_data = json.loads(line.decode("utf-8"))
@@ -724,6 +736,9 @@ def generate_syllabus_data(
                 response.raise_for_status()
                 res_json = response.json()
                 raw_text = res_json.get("response", "").strip()
+
+            if stop_event and getattr(stop_event, "is_set", lambda: False)():
+                raise InterruptedError("Generation stopped by user.")
 
             elapsed = time.time() - start_t
             print(f"[LLM Engine] Live generation complete ({elapsed:.2f}s). Validating against Pydantic schema...")
@@ -746,7 +761,13 @@ def generate_syllabus_data(
             print("[LLM Engine] [OK] Pydantic Validation Successful! All OBE constraints satisfied.")
             return validated_syllabus
 
+        except InterruptedError:
+            print("[LLM Engine] Generation cancelled by user.")
+            raise
+
         except requests.exceptions.RequestException as req_err:
+            if stop_event and getattr(stop_event, "is_set", lambda: False)():
+                raise InterruptedError("Generation stopped by user.")
             print(f"[LLM Engine] Connection to Ollama failed at {OLLAMA_GENERATE_URL}: {req_err}")
             if allow_fallback:
                 print("[LLM Engine] Activating domain-aware dynamic fallback generator...")
@@ -762,6 +783,8 @@ def generate_syllabus_data(
             ) from req_err
 
         except (json.JSONDecodeError, ValidationError, ValueError) as val_err:
+            if stop_event and getattr(stop_event, "is_set", lambda: False)():
+                raise InterruptedError("Generation stopped by user.")
             print(f"[LLM Engine] [FAIL] Validation error on attempt {attempt}: {val_err}")
             if attempt == max_retries:
                 if allow_fallback:

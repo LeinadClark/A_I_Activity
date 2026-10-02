@@ -211,6 +211,20 @@ class OBESyllabusDesktopApp(tk.Tk):
             background=[("active", "#1D4ED8"), ("disabled", "#94A3B8")]
         )
 
+        self.style.configure(
+            "Danger.TButton",
+            font=("Segoe UI Semibold", 10),
+            background="#DC2626",
+            foreground="#FFFFFF",
+            padding=[12, 6],
+            borderwidth=0
+        )
+        self.style.map(
+            "Danger.TButton",
+            background=[("active", "#B91C1C"), ("disabled", "#CBD5E1")],
+            foreground=[("disabled", "#94A3B8")]
+        )
+
         self.style.configure("Treeview.Heading", font=("Segoe UI Semibold", 9), background="#E2E8F0")
         self.style.configure("Treeview", font=("Segoe UI", 9), rowheight=26)
 
@@ -363,13 +377,25 @@ class OBESyllabusDesktopApp(tk.Tk):
         self.cmb_models.pack(fill=tk.X, padx=16, pady=(0, 10))
 
         # Generator Action Buttons
+        btn_action_frame = tk.Frame(left_card, bg=COLOR_CARD)
+        btn_action_frame.pack(fill=tk.X, padx=16, pady=(8, 6))
+
         self.btn_generate = ttk.Button(
-            left_card,
-            text="🚀 GENERATE SYLLABUS LIVE WITH OLLAMA",
+            btn_action_frame,
+            text="🚀 GENERATE LIVE",
             style="Primary.TButton",
             command=self._start_live_generation
         )
-        self.btn_generate.pack(fill=tk.X, padx=16, pady=(8, 6))
+        self.btn_generate.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 4))
+
+        self.btn_stop = ttk.Button(
+            btn_action_frame,
+            text="🛑 STOP GENERATING",
+            style="Danger.TButton",
+            command=self._stop_live_generation,
+            state="disabled"
+        )
+        self.btn_stop.pack(side=tk.RIGHT, padx=(4, 0))
 
         # Progress Bar & Ticker
         self.prog_bar = ttk.Progressbar(left_card, mode="indeterminate")
@@ -716,6 +742,13 @@ class OBESyllabusDesktopApp(tk.Tk):
         self.txt_log.insert(tk.END, text + "\n")
         self.txt_log.see(tk.END)
 
+    def _stop_live_generation(self):
+        if hasattr(self, "stop_event") and self.stop_event:
+            self.stop_event.set()
+        self.lbl_ticker.config(text="⏹ Generation stopping...", fg="#DC2626")
+        self._log("[STOP] Stop button clicked. Halting Ollama generation...")
+        self.btn_stop.config(state="disabled")
+
     def _start_live_generation(self):
         c_code = self.ent_code.get().strip() or "CS 311"
         c_title = self.ent_title.get().strip() or "Data Mining"
@@ -727,7 +760,9 @@ class OBESyllabusDesktopApp(tk.Tk):
         if not c_desc:
             c_desc = f"Comprehensive study of foundational principles and practical applications of {c_title}."
 
+        self.stop_event = threading.Event()
         self.btn_generate.config(state="disabled")
+        self.btn_stop.config(state="normal")
         self.prog_bar.start(10)
         self.lbl_ticker.config(text=f"Connecting to Ollama '{model_name}' on localhost:11434...", fg=COLOR_MAROON)
         self.txt_log.delete("1.0", tk.END)
@@ -752,7 +787,8 @@ class OBESyllabusDesktopApp(tk.Tk):
                     credit_units=c_units,
                     model_name=model_name,
                     allow_fallback=True,
-                    progress_callback=progress_callback
+                    progress_callback=progress_callback,
+                    stop_event=self.stop_event
                 )
 
                 elapsed = time.time() - t0
@@ -767,6 +803,7 @@ class OBESyllabusDesktopApp(tk.Tk):
                     self.current_syllabus = syllabus
                     self.prog_bar.stop()
                     self.btn_generate.config(state="normal")
+                    self.btn_stop.config(state="disabled")
                     self.lbl_ticker.config(
                         text=f"✓ Live generation complete in {elapsed:.1f}s! Validated and saved to SQLite.",
                         fg=COLOR_SUCCESS
@@ -785,10 +822,20 @@ class OBESyllabusDesktopApp(tk.Tk):
 
                 self.after(0, on_success)
 
+            except InterruptedError:
+                def on_stopped():
+                    self.prog_bar.stop()
+                    self.btn_generate.config(state="normal")
+                    self.btn_stop.config(state="disabled")
+                    self.lbl_ticker.config(text="⏹ Generation stopped by user.", fg="#DC2626")
+                    self._log("[CANCELLED] Generation was successfully stopped by user.")
+                self.after(0, on_stopped)
+
             except Exception as err:
                 def on_fail():
                     self.prog_bar.stop()
                     self.btn_generate.config(state="normal")
+                    self.btn_stop.config(state="disabled")
                     self.lbl_ticker.config(text=f"Error: {err}", fg="red")
                     self._log(f"[ERROR] Generation failed: {err}")
                     messagebox.showerror("Generation Error", f"Failed to generate syllabus: {err}")

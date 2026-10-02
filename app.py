@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import sqlite3
+import threading
 import streamlit as st
 from streamlit import runtime
 from streamlit.web import cli as stcli
@@ -262,36 +263,74 @@ with tab1:
         "The automated retry loop intercepts `ValidationError` and enforces deterministic boundaries on the LLM."
     )
 
-    col_btn, col_info = st.columns([1, 2])
-    with col_btn:
-        if st.button("Generate & Validate Syllabus", use_container_width=True):
-            with st.spinner(f"Querying Ollama ({model_choice}) with automated retry feedback loop..."):
-                try:
-                    generated = llm_engine.generate_syllabus_data(
-                        course_title=input_title,
-                        course_description=input_desc,
-                        course_code=input_code,
-                        prerequisites=input_prereq,
-                        credit_units=input_units,
-                        model_name=model_choice,
-                        allow_fallback=True
-                    )
-                    st.session_state.current_syllabus = generated
+    col_btn_gen, col_btn_stop = st.columns([1, 1])
 
-                    # 1. Write sample_validated_output.json
-                    with open("sample_validated_output.json", "w", encoding="utf-8") as f:
-                        f.write(generated.model_dump_json(indent=2))
+    if "stop_event" not in st.session_state:
+        st.session_state.stop_event = None
+    if "is_generating" not in st.session_state:
+        st.session_state.is_generating = False
 
-                    # 2. Auto-ingest into SQLite
-                    db_manager.ingest_syllabus(generated)
+    with col_btn_gen:
+        btn_generate = st.button("🚀 Generate & Validate Syllabus", use_container_width=True, type="primary")
 
-                    # 3. Auto-compile and export HTML website
-                    html_path = export_engine.export_syllabus_html(generated.course_code, auto_open=False)
-                    st.session_state.last_exported_html = html_path
+    with col_btn_stop:
+        btn_stop = st.button("🛑 Stop Generating", use_container_width=True)
 
-                    st.success(f"[PASS] Pydantic Validated! Auto-stored in SQLite and HTML website generated: {os.path.basename(html_path)}")
-                except Exception as e:
-                    st.error(f"Generation failed: {e}")
+    if btn_stop:
+        if st.session_state.get("stop_event"):
+            st.session_state.stop_event.set()
+        st.session_state.is_generating = False
+        st.warning("⏹ Generation stopped by user.")
+
+    if btn_generate:
+        st.session_state.is_generating = True
+        st.session_state.stop_event = threading.Event()
+        stop_evt = st.session_state.stop_event
+
+        with st.spinner(f"Querying Ollama ({model_choice}) with automated retry feedback loop..."):
+            progress_box = st.empty()
+
+            def st_progress(count: int, chunk: str):
+                if stop_evt.is_set():
+                    raise InterruptedError("Generation stopped by user.")
+                progress_box.caption(f"⚡ Streaming live tokens from Ollama... {count:,} tokens produced")
+
+            try:
+                generated = llm_engine.generate_syllabus_data(
+                    course_title=input_title,
+                    course_description=input_desc,
+                    course_code=input_code,
+                    prerequisites=input_prereq,
+                    credit_units=input_units,
+                    model_name=model_choice,
+                    allow_fallback=True,
+                    progress_callback=st_progress,
+                    stop_event=stop_evt
+                )
+                st.session_state.current_syllabus = generated
+                st.session_state.is_generating = False
+
+                # 1. Write sample_validated_output.json
+                with open("sample_validated_output.json", "w", encoding="utf-8") as f:
+                    f.write(generated.model_dump_json(indent=2))
+
+                # 2. Auto-ingest into SQLite
+                db_manager.ingest_syllabus(generated)
+
+                # 3. Auto-compile and export HTML website
+                html_path = export_engine.export_syllabus_html(generated.course_code, auto_open=False)
+                st.session_state.last_exported_html = html_path
+
+                progress_box.empty()
+                st.success(f"[PASS] Pydantic Validated! Auto-stored in SQLite and HTML website generated: {os.path.basename(html_path)}")
+            except InterruptedError:
+                st.session_state.is_generating = False
+                progress_box.empty()
+                st.warning("⏹ Generation stopped by user.")
+            except Exception as e:
+                st.session_state.is_generating = False
+                progress_box.empty()
+                st.error(f"Generation failed: {e}")
 
     if st.session_state.current_syllabus:
         s = st.session_state.current_syllabus
