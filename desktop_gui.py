@@ -364,6 +364,59 @@ class OBESyllabusDesktopApp(tk.Tk):
         self.ent_prereq = ttk.Entry(field_frame, font=("Segoe UI", 9))
         self.ent_prereq.grid(row=3, column=1, sticky="ew", pady=3, padx=(6, 0))
 
+        # Row 4: Term / Semester & Year Level
+        tk.Label(field_frame, text="Term / Year:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD).grid(row=4, column=0, sticky="w", pady=3)
+        term_frame = tk.Frame(field_frame, bg=COLOR_CARD)
+        term_frame.grid(row=4, column=1, sticky="ew", pady=3, padx=(6, 0))
+
+        self.cmb_term = ttk.Combobox(term_frame, values=["1st Semester", "2nd Semester", "3rd Semester", "Summer"], state="readonly", font=("Segoe UI", 9), width=13)
+        self.cmb_term.set("1st Semester")
+        self.cmb_term.pack(side=tk.LEFT, padx=(0, 6))
+
+        tk.Label(term_frame, text="Year:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD).pack(side=tk.LEFT, padx=(2, 2))
+        self.cmb_year = ttk.Combobox(term_frame, values=["1", "2", "3", "4"], state="readonly", font=("Segoe UI", 9), width=4)
+        self.cmb_year.set("3")
+        self.cmb_year.pack(side=tk.LEFT)
+
+        # Row 5: School Year (SY)
+        tk.Label(field_frame, text="School Year (SY):", font=("Segoe UI Semibold", 9), bg=COLOR_CARD).grid(row=5, column=0, sticky="w", pady=3)
+        sy_frame = tk.Frame(field_frame, bg=COLOR_CARD)
+        sy_frame.grid(row=5, column=1, sticky="ew", pady=3, padx=(6, 0))
+
+        self.ent_sy_start = ttk.Entry(sy_frame, font=("Segoe UI", 9), width=6)
+        self.ent_sy_start.insert(0, "2026")
+        self.ent_sy_start.pack(side=tk.LEFT)
+
+        tk.Label(sy_frame, text="to", font=("Segoe UI", 9), bg=COLOR_CARD).pack(side=tk.LEFT, padx=6)
+
+        self.ent_sy_end = ttk.Entry(sy_frame, font=("Segoe UI", 9), width=6)
+        self.ent_sy_end.insert(0, "2027")
+        self.ent_sy_end.pack(side=tk.LEFT)
+
+        # Row 6: Professor Dropdown
+        tk.Label(field_frame, text="Course Professor:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD).grid(row=6, column=0, sticky="w", pady=3)
+        prof_frame = tk.Frame(field_frame, bg=COLOR_CARD)
+        prof_frame.grid(row=6, column=1, sticky="ew", pady=3, padx=(6, 0))
+
+        self.prof_presets = [
+            "MALITAO, ROBERTO L.",
+            "GALVE, ARNOLD B.",
+            "ANTONIO, FE M.",
+            "DACALLOS, KENNETH I.",
+            "FAVENIR, HOMER T.",
+            "FABREGAS, VAL PATRICK F.",
+            "EUSEBIO, LUVIM M.",
+            "Others..."
+        ]
+        self.cmb_prof = ttk.Combobox(prof_frame, values=self.prof_presets, state="readonly", font=("Segoe UI", 9))
+        self.cmb_prof.set("MALITAO, ROBERTO L.")
+        self.cmb_prof.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self.cmb_prof.bind("<<ComboboxSelected>>", self._on_prof_change)
+
+        # Row 7: Custom Professor Name Entry
+        self.lbl_custom_prof = tk.Label(field_frame, text="Prof Name:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD)
+        self.ent_custom_prof = ttk.Entry(field_frame, font=("Segoe UI", 9))
+
         field_frame.columnconfigure(1, weight=1)
 
         tk.Label(left_card, text="Course Catalog Description:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD).pack(anchor="w", padx=16, pady=(8, 2))
@@ -708,6 +761,33 @@ class OBESyllabusDesktopApp(tk.Tk):
 
         threading.Thread(target=worker, daemon=True).start()
 
+    def _on_prof_change(self, event=None):
+        if self.cmb_prof.get() == "Others...":
+            self.lbl_custom_prof.grid(row=7, column=0, sticky="w", pady=3)
+            self.ent_custom_prof.grid(row=7, column=1, sticky="ew", pady=3, padx=(6, 0))
+            self.ent_custom_prof.focus_set()
+        else:
+            self.lbl_custom_prof.grid_remove()
+            self.ent_custom_prof.grid_remove()
+
+    def get_selected_professor(self) -> str:
+        val = self.cmb_prof.get()
+        if val == "Others...":
+            custom = self.ent_custom_prof.get().strip()
+            return custom if custom else "CCS Faculty Member"
+        return val
+
+    def get_selected_term(self) -> str:
+        return self.cmb_term.get() or "1st Semester"
+
+    def get_selected_school_year(self) -> str:
+        s1 = self.ent_sy_start.get().strip() or "2026"
+        s2 = self.ent_sy_end.get().strip() or "2027"
+        return f"{s1} - {s2}"
+
+    def get_selected_year_level(self) -> str:
+        return self.cmb_year.get() or "3"
+
     def _on_preset_change(self, event=None):
         idx = self.cmb_presets.current()
         if 0 <= idx < len(PRESETS):
@@ -959,7 +1039,15 @@ class OBESyllabusDesktopApp(tk.Tk):
             return
         # Ensure latest data in DB
         db_manager.ingest_syllabus(self.current_syllabus, db_path=self.db_path)
-        html_path = export_engine.export_syllabus_html(self.current_syllabus.course_code, db_path=self.db_path, auto_open=False)
+        html_path = export_engine.export_syllabus_html(
+            self.current_syllabus.course_code,
+            db_path=self.db_path,
+            auto_open=False,
+            professor=self.get_selected_professor(),
+            term=self.get_selected_term(),
+            school_year=self.get_selected_school_year(),
+            year_level=self.get_selected_year_level()
+        )
         self.last_exported_html = html_path
         abs_p = os.path.abspath(html_path)
         self._log(f"[EXPORT] Compiled official HTML syllabus: {abs_p}")
@@ -1049,7 +1137,15 @@ class OBESyllabusDesktopApp(tk.Tk):
             messagebox.showwarning("Warning", "Please select a course to export.")
             return
         c_code = self.tree_db.item(selected[0], "values")[0]
-        html_path = export_engine.export_syllabus_html(c_code, db_path=self.db_path, auto_open=False)
+        html_path = export_engine.export_syllabus_html(
+            c_code,
+            db_path=self.db_path,
+            auto_open=False,
+            professor=self.get_selected_professor(),
+            term=self.get_selected_term(),
+            school_year=self.get_selected_school_year(),
+            year_level=self.get_selected_year_level()
+        )
         webbrowser.open(f"file://{os.path.abspath(html_path)}")
 
     def _delete_selected_course(self):

@@ -38,7 +38,11 @@ def export_syllabus_html(
     template_dir: str = DEFAULT_TEMPLATE_DIR,
     template_file: str = DEFAULT_TEMPLATE_FILE,
     db_path: str = db_manager.DEFAULT_DB_PATH,
-    auto_open: bool = False
+    auto_open: bool = False,
+    professor: str = "MALITAO, ROBERTO L.",
+    term: str = "1st Semester",
+    school_year: str = "2026 - 2027",
+    year_level: str = "3"
 ) -> str:
     """
     Queries course from SQLite, compiles with Jinja2, and saves browser-ready HTML.
@@ -51,6 +55,17 @@ def export_syllabus_html(
             f"Course '{course_code}' not found in database '{db_path}'. "
             f"Available courses: {available}"
         )
+
+    # Attach dynamic academic parameters
+    if professor:
+        course_data["professor"] = professor
+        course_data["instructor"] = professor
+    if term:
+        course_data["term"] = term
+    if school_year:
+        course_data["school_year"] = school_year
+    if year_level:
+        course_data["year_level"] = year_level
 
     # 2. Setup Jinja2 Template Environment
     base_dir = os.path.dirname(os.path.abspath(__file__))

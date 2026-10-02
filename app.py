@@ -236,6 +236,38 @@ input_prereq = st.sidebar.text_input("Prerequisite(s)", key="input_prereq")
 input_units = st.sidebar.text_input("Credit Units", key="input_units")
 input_desc = st.sidebar.text_area("Course Catalog Description", height=120, key="input_desc")
 
+st.sidebar.subheader("👨‍🏫 Academic Term & Faculty Lead")
+
+PROF_PRESETS = [
+    "MALITAO, ROBERTO L.",
+    "GALVE, ARNOLD B.",
+    "ANTONIO, FE M.",
+    "DACALLOS, KENNETH I.",
+    "FAVENIR, HOMER T.",
+    "FABREGAS, VAL PATRICK F.",
+    "EUSEBIO, LUVIM M.",
+    "Others"
+]
+prof_choice = st.sidebar.selectbox("Course Professor", options=PROF_PRESETS, index=0)
+if prof_choice == "Others":
+    custom_prof = st.sidebar.text_input("Enter Professor Name", value="CCS Faculty Member")
+    selected_prof = custom_prof.strip() or "CCS Faculty Member"
+else:
+    selected_prof = prof_choice
+
+col_term, col_year = st.sidebar.columns(2)
+with col_term:
+    selected_term = col_term.selectbox("Term / Semester", options=["1st Semester", "2nd Semester", "3rd Semester", "Summer"], index=0)
+with col_year:
+    selected_year = col_year.selectbox("Year Level", options=["1", "2", "3", "4"], index=2)
+
+col_sy1, col_sy2 = st.sidebar.columns(2)
+with col_sy1:
+    sy_start = col_sy1.text_input("SY Start", value="2026")
+with col_sy2:
+    sy_end = col_sy2.text_input("SY End", value="2027")
+selected_sy = f"{sy_start.strip()} - {sy_end.strip()}"
+
 # ---------------------------------------------------------------------------
 # 4. Main App Header
 # ---------------------------------------------------------------------------
@@ -318,7 +350,14 @@ with tab1:
                 db_manager.ingest_syllabus(generated)
 
                 # 3. Auto-compile and export HTML website
-                html_path = export_engine.export_syllabus_html(generated.course_code, auto_open=False)
+                html_path = export_engine.export_syllabus_html(
+                    generated.course_code,
+                    auto_open=False,
+                    professor=selected_prof,
+                    term=selected_term,
+                    school_year=selected_sy,
+                    year_level=selected_year
+                )
                 st.session_state.last_exported_html = html_path
 
                 progress_box.empty()
@@ -509,7 +548,14 @@ with tab4:
         with col_c1:
             if st.button("🔨 Compile & Assemble Institutional Syllabus HTML", use_container_width=True):
                 try:
-                    html_path = export_engine.export_syllabus_html(export_target, auto_open=False)
+                    html_path = export_engine.export_syllabus_html(
+                        export_target,
+                        auto_open=False,
+                        professor=selected_prof,
+                        term=selected_term,
+                        school_year=selected_sy,
+                        year_level=selected_year
+                    )
                     st.success(f"[PASS] Successfully generated: {os.path.basename(html_path)}")
                     st.session_state.last_exported_html = html_path
                 except Exception as e:
