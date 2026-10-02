@@ -630,66 +630,54 @@ class OBESyllabusDesktopApp(tk.Tk):
         info_scroll_frame = tk.Frame(tab_info, bg=COLOR_CARD)
         info_scroll_frame.pack(fill=tk.BOTH, expand=True, padx=14, pady=10)
 
-        # Card 1: Course & Institutional Identification
-        grp_course = tk.LabelFrame(
+        # Card 1: Institutional & Course Specification (Compact Grid Layout)
+        grp_spec = tk.LabelFrame(
             info_scroll_frame,
-            text=" 📘 Institutional & Course Identification ",
+            text=" 📘 Institutional Course Specification & Faculty Leadership ",
             font=("Segoe UI Semibold", 9),
             bg=COLOR_CARD,
             fg=COLOR_MAROON,
             bd=1,
             relief=tk.SOLID
         )
-        grp_course.pack(fill=tk.X, pady=(0, 6))
+        grp_spec.pack(fill=tk.X, pady=(0, 6))
 
-        row_c1 = tk.Frame(grp_course, bg=COLOR_CARD)
-        row_c1.pack(fill=tk.X, padx=10, pady=3)
-        tk.Label(row_c1, text="Course Title:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_title = tk.Label(row_c1, text="No Course Loaded", font=("Segoe UI Bold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_title.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        grid_spec = tk.Frame(grp_spec, bg=COLOR_CARD)
+        grid_spec.pack(fill=tk.X, padx=12, pady=6)
 
-        row_c2 = tk.Frame(grp_course, bg=COLOR_CARD)
-        row_c2.pack(fill=tk.X, padx=10, pady=3)
-        tk.Label(row_c2, text="Credit Units:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_units = tk.Label(row_c2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_units.pack(side=tk.LEFT, padx=(0, 20))
-        tk.Label(row_c2, text="Prerequisite(s):", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_prereq = tk.Label(row_c2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_prereq.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        # Row 0: Course Title
+        tk.Label(grid_spec, text="Course Title:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=0, column=0, sticky="w", pady=3)
+        self.lbl_ov_title = tk.Label(grid_spec, text="No Course Loaded", font=("Segoe UI Bold", 9), bg=COLOR_CARD, fg=COLOR_MAROON, anchor="w")
+        self.lbl_ov_title.grid(row=0, column=1, columnspan=5, sticky="w", padx=(6, 0), pady=3)
 
-        # Card 2: Faculty Leadership & Academic Period
-        grp_faculty = tk.LabelFrame(
-            info_scroll_frame,
-            text=" 👨‍🏫 Faculty Leadership & Academic Period ",
-            font=("Segoe UI Semibold", 9),
-            bg=COLOR_CARD,
-            fg=COLOR_MAROON,
-            bd=1,
-            relief=tk.SOLID
-        )
-        grp_faculty.pack(fill=tk.X, pady=(0, 6))
+        # Row 1: Faculty Lead
+        tk.Label(grid_spec, text="Faculty Lead:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=1, column=0, sticky="w", pady=3)
+        self.lbl_ov_faculty = tk.Label(grid_spec, text="—", font=("Segoe UI Bold", 9), bg=COLOR_CARD, fg="#1E293B", anchor="w")
+        self.lbl_ov_faculty.grid(row=1, column=1, columnspan=5, sticky="w", padx=(6, 0), pady=3)
 
-        row_f1 = tk.Frame(grp_faculty, bg=COLOR_CARD)
-        row_f1.pack(fill=tk.X, padx=10, pady=3)
-        tk.Label(row_f1, text="Faculty Lead:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_faculty = tk.Label(row_f1, text="—", font=("Segoe UI Bold", 9), bg=COLOR_CARD, fg=COLOR_MAROON)
-        self.lbl_ov_faculty.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        # Row 2: Credit Units & Prerequisite(s)
+        tk.Label(grid_spec, text="Credit Units:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=2, column=0, sticky="w", pady=3)
+        self.lbl_ov_units = tk.Label(grid_spec, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_units.grid(row=2, column=1, sticky="w", padx=(6, 24), pady=3)
 
-        row_f2 = tk.Frame(grp_faculty, bg=COLOR_CARD)
-        row_f2.pack(fill=tk.X, padx=10, pady=3)
-        tk.Label(row_f2, text="Academic Term:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_term = tk.Label(row_f2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_term.pack(side=tk.LEFT, padx=(0, 20))
+        tk.Label(grid_spec, text="Prerequisite(s):", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=2, column=2, sticky="w", pady=3)
+        self.lbl_ov_prereq = tk.Label(grid_spec, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_prereq.grid(row=2, column=3, columnspan=3, sticky="w", padx=(6, 0), pady=3)
 
-        tk.Label(row_f2, text="School Year:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=12, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_sy = tk.Label(row_f2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_sy.pack(side=tk.LEFT, padx=(0, 20))
+        # Row 3: Academic Term, School Year & Year Level
+        tk.Label(grid_spec, text="Academic Term:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=3, column=0, sticky="w", pady=3)
+        self.lbl_ov_term = tk.Label(grid_spec, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_term.grid(row=3, column=1, sticky="w", padx=(6, 24), pady=3)
 
-        tk.Label(row_f2, text="Year Level:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=10, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_year = tk.Label(row_f2, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_year.pack(side=tk.LEFT)
+        tk.Label(grid_spec, text="School Year:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=3, column=2, sticky="w", pady=3)
+        self.lbl_ov_sy = tk.Label(grid_spec, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_sy.grid(row=3, column=3, sticky="w", padx=(6, 24), pady=3)
 
-        # Card 3: Catalog Description
+        tk.Label(grid_spec, text="Year Level:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=3, column=4, sticky="w", pady=3)
+        self.lbl_ov_year = tk.Label(grid_spec, text="—", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_year.grid(row=3, column=5, sticky="w", padx=(6, 0), pady=3)
+
+        # Card 2: Catalog Description
         grp_desc = tk.LabelFrame(
             info_scroll_frame,
             text=" 📝 Course Catalog Description ",
@@ -705,7 +693,7 @@ class OBESyllabusDesktopApp(tk.Tk):
         self.txt_ov_desc.pack(fill=tk.BOTH, expand=True, padx=8, pady=4)
         self.txt_ov_desc.config(state="disabled")
 
-        # Card 4: Curricular Structure & Compliance
+        # Card 3: Curricular Structure & Compliance
         grp_struct = tk.LabelFrame(
             info_scroll_frame,
             text=" 📊 OBE Curriculum Metrics & Grading Breakdown ",
@@ -717,23 +705,20 @@ class OBESyllabusDesktopApp(tk.Tk):
         )
         grp_struct.pack(fill=tk.X, pady=(0, 2))
 
-        row_s1 = tk.Frame(grp_struct, bg=COLOR_CARD)
-        row_s1.pack(fill=tk.X, padx=10, pady=2)
-        tk.Label(row_s1, text="OBE CLOs:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_clos_summary = tk.Label(row_s1, text="0 Outcomes", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_clos_summary.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        grid_s = tk.Frame(grp_struct, bg=COLOR_CARD)
+        grid_s.pack(fill=tk.X, padx=12, pady=6)
 
-        row_s2 = tk.Frame(grp_struct, bg=COLOR_CARD)
-        row_s2.pack(fill=tk.X, padx=10, pady=2)
-        tk.Label(row_s2, text="Term Matrix:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_weeks_summary = tk.Label(row_s2, text="18 Instructional Weeks (W6 Prelim, W12 Midterm, W18 Final)", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_weeks_summary.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        tk.Label(grid_s, text="OBE CLOs:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=0, column=0, sticky="w", pady=2)
+        self.lbl_ov_clos_summary = tk.Label(grid_s, text="0 Outcomes", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_clos_summary.grid(row=0, column=1, sticky="w", padx=(6, 0), pady=2)
 
-        row_s3 = tk.Frame(grp_struct, bg=COLOR_CARD)
-        row_s3.pack(fill=tk.X, padx=10, pady=2)
-        tk.Label(row_s3, text="Grading Weights:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, width=14, anchor="w").pack(side=tk.LEFT)
-        self.lbl_ov_grading_summary = tk.Label(row_s3, text="Lecture 50% | Laboratory 20% | Major Examinations 30%", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN)
-        self.lbl_ov_grading_summary.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        tk.Label(grid_s, text="Term Matrix:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=1, column=0, sticky="w", pady=2)
+        self.lbl_ov_weeks_summary = tk.Label(grid_s, text="18 Instructional Weeks (W6 Prelim, W12 Midterm, W18 Final)", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_weeks_summary.grid(row=1, column=1, sticky="w", padx=(6, 0), pady=2)
+
+        tk.Label(grid_s, text="Grading Weights:", font=("Segoe UI Semibold", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MUTED).grid(row=2, column=0, sticky="w", pady=2)
+        self.lbl_ov_grading_summary = tk.Label(grid_s, text="Lecture 50% | Laboratory 20% | Major Examinations 30%", font=("Segoe UI", 9), bg=COLOR_CARD, fg=COLOR_TEXT_MAIN, anchor="w")
+        self.lbl_ov_grading_summary.grid(row=2, column=1, sticky="w", padx=(6, 0), pady=2)
 
         # ACTION TOOLBAR
         toolbar = tk.Frame(right_card, bg=COLOR_CARD)
@@ -844,7 +829,7 @@ class OBESyllabusDesktopApp(tk.Tk):
             bg=COLOR_CARD,
             fg=COLOR_TEXT_MUTED
         )
-        self.lbl_insp_units.pack(side=tk.RIGHT)
+        self.lbl_insp_units.pack(side=tk.LEFT, padx=(16, 0))
 
         row_i2 = tk.Frame(self.frame_db_inspector, bg=COLOR_CARD)
         row_i2.pack(fill=tk.X, padx=10, pady=2)
@@ -866,9 +851,10 @@ class OBESyllabusDesktopApp(tk.Tk):
             bg=COLOR_CARD,
             fg="#475569",
             justify=tk.LEFT,
+            anchor="w",
             wraplength=980
         )
-        self.lbl_insp_desc.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self.lbl_insp_desc.pack(side=tk.LEFT, fill=tk.X, expand=True, anchor="w")
 
         # Bottom Actions
         bar_act = tk.Frame(self.tab_database, bg=COLOR_BG)

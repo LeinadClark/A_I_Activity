@@ -393,16 +393,28 @@ with tab1:
 
         # Suggestion 3: Course Overview & Faculty Info Card
         with st.expander("ℹ️ Course Overview & Faculty Info (Curriculum Metadata)", expanded=True):
-            ci1, ci2 = st.columns(2)
-            with ci1:
-                st.markdown(f"**Course Title:** {s.course_title}")
-                st.markdown(f"**Credit Units:** {s.credit_units}")
-                st.markdown(f"**Prerequisite(s):** {s.prerequisites or 'None'}")
-            with ci2:
-                st.markdown(f"**Assigned Faculty Lead:** :red[**{selected_prof}**]")
-                st.markdown(f"**Academic Period:** {selected_term} | SY {selected_sy} (Year Level {selected_year})")
-                st.markdown(f"**Curriculum Structure:** {len(s.course_outcomes)} Bloom CLOs | 18 Instructional Weeks")
-            st.markdown(f"**Catalog Description:** {s.course_description}")
+            st.markdown(
+                f"""
+                <div style="background-color: #FFFDF5; border: 1px solid #E6D396; border-radius: 6px; padding: 12px 16px; margin-bottom: 8px;">
+                    <div style="display: grid; grid-template-columns: 130px 1fr 130px 1fr; gap: 8px 16px; font-size: 0.92rem;">
+                        <span style="font-weight: bold; color: #800000;">Course Title:</span>
+                        <span><strong>{s.course_code}</strong> — {s.course_title}</span>
+                        <span style="font-weight: bold; color: #800000;">Faculty Lead:</span>
+                        <span style="font-weight: bold; color: #800000;">{selected_prof}</span>
+                        <span style="font-weight: bold; color: #800000;">Credit Units:</span>
+                        <span>{s.credit_units}</span>
+                        <span style="font-weight: bold; color: #800000;">Prerequisite(s):</span>
+                        <span>{s.prerequisites or 'None'}</span>
+                        <span style="font-weight: bold; color: #800000;">Academic Period:</span>
+                        <span style="grid-column: span 3;">{selected_term} | SY {selected_sy} (Year Level {selected_year})</span>
+                    </div>
+                    <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #E6D396; font-size: 0.88rem; color: #374151;">
+                        <strong style="color: #800000;">Catalog Description:</strong> {s.course_description}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
         st.markdown("#### Quality Assurance Compliance Checks")
         col_chk1, col_chk2, col_chk3 = st.columns(3)
